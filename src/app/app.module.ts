@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { ListingPage } from '../pages/listing/listing';
+import { DiaryPage } from '../pages/diary/diary';
 import { FeedPage } from '../pages/feed/feed';
 import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
@@ -34,7 +34,7 @@ import { CounterInput } from '../components/counter-input/counter-input';
 import { Rating } from '../components/rating/rating';
 
 import { FeedService } from '../pages/feed/feed.service';
-import { ListingService } from '../pages/listing/listing.service';
+import { DiaryService } from '../pages/diary/diary.service';
 import { ProfileService } from '../pages/profile/profile.service';
 import { NotificationsService } from '../pages/notifications/notifications.service';
 import { List1Service } from '../pages/list-1/list-1.service';
@@ -44,7 +44,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
 @NgModule({
   declarations: [
     MyApp,
-    ListingPage,
+    DiaryPage,
     FeedPage,
     FollowersPage,
     LayoutsPage,
@@ -80,7 +80,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ListingPage,
+    DiaryPage,
     FeedPage,
     FollowersPage,
     LayoutsPage,
@@ -102,7 +102,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     TermsOfServicePage,
     PrivacyPolicyPage
   ],
-  providers: [FeedService, ListingService, ProfileService, NotificationsService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService, DiaryService, ProfileService, NotificationsService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

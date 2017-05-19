@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ListingPage } from '../listing/listing';
+import { DiaryPage } from '../diary/diary';
 import { ProfilePage } from '../profile/profile';
 import { NotificationsPage } from '../notifications/notifications';
 
@@ -16,7 +16,7 @@ export class TabsNavigationPage {
   tab5Root: any;
 
   constructor() {
-    this.tab1Root = ListingPage;
+    this.tab1Root = DiaryPage;
     this.tab2Root = ProfilePage;
     this.tab3Root = NotificationsPage;
     this.tab4Root = NotificationsPage;

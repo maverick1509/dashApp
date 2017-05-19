@@ -9,12 +9,12 @@
 	margin: 0px;
 }
 
-listing-page {
+diary-page {
 	$categories-heading-image-height: 150px;
 	$categories-grid-padding: 10px;
 	$categories-horizontal-list-padding: 10px;
 
-	.listing-header
+	.diary-header
 	{
 		.header-logo
 		{
@@ -22,7 +22,7 @@ listing-page {
 		}
 	}
 
-	.listing-content
+	.diary-content
 	{
 		.image-heading
 		{

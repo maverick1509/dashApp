@@ -4,21 +4,21 @@ import { NavController, LoadingController } from 'ionic-angular';
 import { FeedPage } from '../feed/feed';
 import 'rxjs/Rx';
 
-import { ListingModel } from './listing.model';
-import { ListingService } from './listing.service';
+import { DiaryModel } from './diary.model';
+import { DiaryService } from './diary.service';
 
 
 @Component({
-  selector: 'listing-page',
-  templateUrl: 'listing.html',
+  selector: 'diary-page',
+  templateUrl: 'diary.html',
 })
-export class ListingPage {
-  listing: ListingModel = new ListingModel();
+export class DiaryPage {
+  diary: DiaryModel = new DiaryModel();
   loading: any;
 
   constructor(
     public nav: NavController,
-    public listingService: ListingService,
+    public diaryService: DiaryService,
     public loadingCtrl: LoadingController
   ) {
     this.loading = this.loadingCtrl.create();
@@ -27,13 +27,13 @@ export class ListingPage {
 
   ionViewDidLoad() {
     this.loading.present();
-    this.listingService
+    this.diaryService
       .getData()
       .then(data => {
-        this.listing.banner_image = data.banner_image;
-        this.listing.banner_title = data.banner_title;
-        this.listing.populars = data.populars;
-        this.listing.categories = data.categories;
+        this.diary.banner_image = data.banner_image;
+        this.diary.banner_title = data.banner_title;
+        this.diary.populars = data.populars;
+        this.diary.categories = data.categories;
         this.loading.dismiss();
       });
   }
