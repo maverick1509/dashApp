@@ -20,6 +20,6 @@ export class TabsNavigationPage {
     this.tab2Root = ProfilePage;
     this.tab3Root = NotificationsPage;
     this.tab4Root = NotificationsPage;
-    this.tab5Root = NotificationsPage;
+    this.tab5Root = ProfilePage;
   }
 }
