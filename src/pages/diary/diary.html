@@ -19,7 +19,7 @@
       </ion-col>
     </ion-row>
   </background-image>
-  <h4 class="categories-title">Popular</h4>
+  <h4 class="categories-title">Teachers</h4>
   <ion-scroll scrollX="true" class="horizontal-categories">
     <ion-row class="categories-row">
       <ion-col width-30 class="horizontal-item"  *ngFor="let popular of diary.populars">
@@ -27,16 +27,33 @@
       </ion-col>
     </ion-row>
   </ion-scroll>
-  <h4 class="categories-title">Browse categories</h4>
-  <ion-row class="grid-categories">
-    <ion-col width-50 class="category-item" *ngFor="let category of diary.categories">
-      <background-image tappable class="category-heading" [src]="category.image" (click)="goToFeed(category)">
-        <ion-row class="heading-row">
-          <ion-col no-padding width-100>
-            <h2 class="category-title">{{category.title}}</h2>
-          </ion-col>
-        </ion-row>
-      </background-image>
-    </ion-col>
-  </ion-row>
+  <div class="user-content">
+    <div class="list-view">
+      <div class="list-item" *ngFor="let post of diary.posts">
+        <span class="item-date">{{post.date}}</span>
+        <ion-card>
+          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
+          <ion-card-content>
+            <p class="item-text">
+              {{post.description}}
+            </p>
+          </ion-card-content>
+          <ion-row no-padding class="actions-row">
+            <ion-col no-padding width-30 text-left>
+              <button class="action-button" ion-button clear small color="danger" icon-left>
+                <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
+                  {{post.likes}} Likes
+              </button>
+            </ion-col>
+            <ion-col no-padding width-45 text-right>
+              <button class="action-button" ion-button clear small color="danger" icon-left>
+                <ion-icon name='chatbubbles'></ion-icon>
+                  {{post.comments}} Comments
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+  </div> 
 </ion-content>

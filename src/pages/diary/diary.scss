@@ -143,5 +143,48 @@ diary-page {
 				}
 			}
 		}
+		.user-content
+		{
+			.list-view
+			{
+				.list-item
+				{
+					@include basic-card-styles($white-d);
+
+					padding: 12px 0px;
+
+					ion-card {
+						margin-top: 0px;
+						margin-bottom: 0px;
+					}
+
+					.item-date
+					{
+						font-size: 1.4rem;
+						font-weight: 500;
+						color: $white-d;
+						margin: 0px 18px 4px;
+						display: block;
+					}
+				}
+			}
+
+			.grid-view
+			{
+				padding: 8px 0px 2px;
+
+				.grid-row
+				{
+					padding: 0px 5px;
+
+					.grid-item
+					{
+						padding: 0px 3px 6px;
+					}
+				}
+
+			}
+		}
 	}
 }
+

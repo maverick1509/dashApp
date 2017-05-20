@@ -54,6 +54,9 @@
       <ion-segment-button value="list" (ionSelect)="onSegmentSelected($event)">
         List
       </ion-segment-button>
+      <ion-segment-button value="grid1" (ionSelect)="onSegmentSelected($event)">
+        Blah!
+      </ion-segment-button>
     </ion-segment>
   </div>
   <div [ngSwitch]="display" class="user-content">
@@ -91,6 +94,13 @@
       </div>
     </div>
     <div *ngSwitchCase="'grid'" class="grid-view">
+      <ion-row wrap class="grid-row">
+        <ion-col width-33 class="grid-item" *ngFor="let post of profile.posts">
+          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>
+        </ion-col>
+      </ion-row>
+    </div>
+     <div *ngSwitchCase="'grid1'" class="grid-view">
       <ion-row wrap class="grid-row">
         <ion-col width-33 class="grid-item" *ngFor="let post of profile.posts">
           <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { MenuController, SegmentButton, App, NavParams, NavController, LoadingController } from 'ionic-angular';
 
 import { FeedPage } from '../feed/feed';
 import 'rxjs/Rx';
@@ -34,6 +34,7 @@ export class DiaryPage {
         this.diary.banner_title = data.banner_title;
         this.diary.populars = data.populars;
         this.diary.categories = data.categories;
+        this.diary.posts = data.posts;
         this.loading.dismiss();
       });
   }
