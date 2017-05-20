@@ -3,12 +3,14 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { DiaryPage } from '../pages/diary/diary';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import { FeedPage } from '../pages/feed/feed';
 import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
 import { NotificationsPage } from '../pages/notifications/notifications';
+import { MessagesPage } from '../pages/messages/messages';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsNavigationPage } from '../pages/tabs-navigation/tabs-navigation';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
@@ -35,8 +37,10 @@ import { Rating } from '../components/rating/rating';
 
 import { FeedService } from '../pages/feed/feed.service';
 import { DiaryService } from '../pages/diary/diary.service';
+import { DashboardService } from '../pages/dashboard/dashboard.service';
 import { ProfileService } from '../pages/profile/profile.service';
 import { NotificationsService } from '../pages/notifications/notifications.service';
+import { MessagesService } from '../pages/messages/messages.service';
 import { List1Service } from '../pages/list-1/list-1.service';
 import { List2Service } from '../pages/list-2/list-2.service';
 import { ScheduleService } from '../pages/schedule/schedule.service';
@@ -45,12 +49,14 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
   declarations: [
     MyApp,
     DiaryPage,
+    DashboardPage,
     FeedPage,
     FollowersPage,
     LayoutsPage,
     FormsPage,
     LoginPage,
     NotificationsPage,
+    MessagesPage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,
@@ -81,12 +87,14 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
   entryComponents: [
     MyApp,
     DiaryPage,
+    DashboardPage,
     FeedPage,
     FollowersPage,
     LayoutsPage,
     FormsPage,
     LoginPage,
     NotificationsPage,
+    MessagesPage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,
@@ -102,7 +110,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     TermsOfServicePage,
     PrivacyPolicyPage
   ],
-  providers: [FeedService, DiaryService, ProfileService, NotificationsService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService, DiaryService, DashboardService, ProfileService, NotificationsService, MessagesService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

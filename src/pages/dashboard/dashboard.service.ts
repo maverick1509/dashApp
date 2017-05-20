@@ -3,16 +3,16 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { DiaryModel } from './diary.model';
+import { DashboardModel } from './dashboard.model';
 
 @Injectable()
-export class DiaryService {
+export class DashboardService {
   constructor(public http: Http) {}
 
-  getData(): Promise<DiaryModel> {
-    return this.http.get('./assets/example_data/diary.json')
+  getData(): Promise<DashboardModel> {
+    return this.http.get('./assets/example_data/dashboard.json')
      .toPromise()
-     .then(response => response.json() as DiaryModel)
+     .then(response => response.json() as DashboardModel)
      .catch(this.handleError);
   }
 

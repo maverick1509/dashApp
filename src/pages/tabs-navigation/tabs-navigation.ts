@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { DiaryPage } from '../diary/diary';
 import { ProfilePage } from '../profile/profile';
+import { MessagesPage } from '../messages/messages';
 import { NotificationsPage } from '../notifications/notifications';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'tabs-navigation',
@@ -17,9 +19,9 @@ export class TabsNavigationPage {
 
   constructor() {
     this.tab1Root = DiaryPage;
-    this.tab2Root = ProfilePage;
+    this.tab2Root = DashboardPage;
     this.tab3Root = NotificationsPage;
-    this.tab4Root = NotificationsPage;
+    this.tab4Root = MessagesPage;
     this.tab5Root = ProfilePage;
   }
 }
