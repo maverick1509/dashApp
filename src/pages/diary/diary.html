@@ -22,13 +22,22 @@
   <h4 class="categories-title">Teachers</h4>
   <ion-scroll scrollX="true" class="horizontal-categories">
     <ion-row class="categories-row">
-      <ion-col width-30 class="horizontal-item"  *ngFor="let popular of diary.populars">
-        <preload-image [ratio]="{w:1, h:1}" [src]="popular.image" title="popular.title"></preload-image>
+      <ion-col width-30 class="horizontal-item"  *ngFor="let teacher of diary.teachers">
+        <preload-image [ratio]="{w:1, h:1}" [src]="teacher.image" title="teacher.title"></preload-image>
       </ion-col>
     </ion-row>
   </ion-scroll>
-  <div class="user-content">
-    <div class="list-view">
+  <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="notices" (ionSelect)="onSegmentSelected($event)">
+        Events
+    </ion-segment-button>
+    <ion-segment-button value="grid" (ionSelect)="onSegmentSelected($event)">
+        Notices
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'notices'" class="list-view">
       <div class="list-item" *ngFor="let post of diary.posts">
         <span class="item-date">{{post.date}}</span>
         <ion-card>
@@ -54,6 +63,35 @@
           </ion-row>
         </ion-card>
       </div>
+    </div>
+  <div *ngSwitchCase="'grid'">
+    <ion-list class="schedule-list">
+        <ion-item class="schedule-item" *ngFor="let item of diary.today">
+          <ion-row>
+            <ion-col width-20 class="schedule-date">
+              <h2 class="schedule-day">{{item.date.day}}</h2>
+              <h3 class="schedule-month">{{item.date.month_name}}</h3>
+              <h4 class="schedule-time">{{item.date.time}}</h4>
+            </ion-col>
+            <ion-col width-80 class="schedule-data">
+              <div class="data-item">
+                <div class="item-content">
+                  <h2 class="item-title one-line">{{item.subject}}</h2>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="clock"></ion-icon>
+                    <p class="description-text">{{item.date.full}}</p>
+                  </div>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="navigate"></ion-icon>
+                    <p class="description-text one-line">{{item.location}}</p>
+                  </div>
+                </div>
+                <ion-icon class="item-icon" name="arrow-forward"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
     </div>
   </div> 
 </ion-content>

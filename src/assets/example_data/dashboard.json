@@ -57,5 +57,16 @@
             "image": "./assets/images/listing/200x200yoga.png"
         }
 
+    ],
+    "items" : [
+        {
+            "title" : "Attendance"
+        },
+        {
+            "title" : "Latest Marks"
+        },
+        {
+            "title" : "Weak/Poor Topics"
+        }
     ]
 }

@@ -7,7 +7,6 @@ import 'rxjs/Rx';
 import { DashboardModel } from './dashboard.model';
 import { DashboardService } from './dashboard.service';
 
-
 @Component({
   selector: 'dashboard-page',
   templateUrl: 'dashboard.html',
@@ -32,8 +31,8 @@ export class DashboardPage {
       .then(data => {
         this.dashboard.banner_image = data.banner_image;
         this.dashboard.banner_title = data.banner_title;
-        this.dashboard.populars = data.populars;
         this.dashboard.categories = data.categories;
+        this.dashboard.items = data.items;
         this.loading.dismiss();
       });
   }
@@ -46,3 +45,4 @@ export class DashboardPage {
   }
 
 }
+

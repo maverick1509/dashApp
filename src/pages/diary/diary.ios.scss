@@ -26,5 +26,9 @@ ion-app.ios {
 				}
 			}
 		}
+		.schedule-segment
+		{
+			@include segment-button-ios-styles();
+		}
 	}
 }

@@ -12,16 +12,46 @@
 </ion-header>
 
 <ion-content class="dashboard-content">
-  <h4 class="categories-title">Browse categories</h4>
-  <ion-row class="grid-categories">
-    <ion-col width-50 class="category-item" *ngFor="let category of dashboard.categories">
-      <background-image tappable class="category-heading" [src]="category.image" (click)="goToFeed(category)">
-        <ion-row class="heading-row">
-          <ion-col no-padding width-100>
-            <h2 class="category-title">{{category.title}}</h2>
-          </ion-col>
-        </ion-row>
-      </background-image>
-    </ion-col>
-  </ion-row>
+  <ion-item-group>
+    <ion-item-divider>Browse categories</ion-item-divider>
+    <ion-row class="grid-1 grid-example">
+      <ion-col width-100 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h1 class="item-title">Analysis Graph</h1>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="grid-2 grid-example">
+      <ion-col width-67 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h1 class="item-title">Progress Card</h1>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col width-33 class="grid-item double-item">
+        <ion-col width-100 class="grid-item">
+          <div class="grid-item-wrapper">
+            <div class="grid-item-inner">
+              <h2 class="item-title">Time Table</h2>
+            </div>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="grid-item-inner">
+              <h2 class="item-title">Time Table</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-col>
+      <ion-col width-33 class="grid-item" *ngFor="let item of dashboard.items">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner">
+            <h4 class="item-title">{{ item.title }}</h4>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-item-group>
 </ion-content>
