@@ -6,6 +6,7 @@ export class DiaryModel {
   posts: Array<DiaryPostModel> = [];
   today: Array<EventModel> = [];
   upcoming: Array<EventModel> = [];
+  homeworks: Array<ListModel>;
 
 }
 
@@ -35,4 +36,10 @@ export class EventDate {
   month_name: string;
   time: string;
   full: string;
+}
+
+export class ListModel {
+  name: string;
+  image: string;
+  description: string;
 }

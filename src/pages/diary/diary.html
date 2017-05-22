@@ -12,13 +12,6 @@
 </ion-header>
 
 <ion-content class="diary-content">
-  <background-image class="image-heading" [src]="diary.banner_image">
-    <ion-row class="heading-row">
-      <ion-col no-padding width-100>
-        <h2 class="main-title">{{diary.banner_title}}</h2>
-      </ion-col>
-    </ion-row>
-  </background-image>
   <h4 class="categories-title">Teachers</h4>
   <ion-scroll scrollX="true" class="horizontal-categories">
     <ion-row class="categories-row">
@@ -29,10 +22,13 @@
   </ion-scroll>
   <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
     <ion-segment-button value="notices" (ionSelect)="onSegmentSelected($event)">
+        Notices
+    </ion-segment-button>
+     <ion-segment-button value="events" (ionSelect)="onSegmentSelected($event)">
         Events
     </ion-segment-button>
-    <ion-segment-button value="grid" (ionSelect)="onSegmentSelected($event)">
-        Notices
+    <ion-segment-button value="hws" (ionSelect)="onSegmentSelected($event)">
+        Homeworks
     </ion-segment-button>
   </ion-segment>
 
@@ -64,7 +60,7 @@
         </ion-card>
       </div>
     </div>
-  <div *ngSwitchCase="'grid'">
+  <div *ngSwitchCase="'events'">
     <ion-list class="schedule-list">
         <ion-item class="schedule-item" *ngFor="let item of diary.today">
           <ion-row>
@@ -94,4 +90,22 @@
       </ion-list>
     </div>
   </div> 
+  <div class="list-mini-content">
+  <div class="list-mini">
+    <ion-list>
+      <button class="list-item" ion-item *ngFor="let hw of diary.homeworks">
+        <ion-row no-padding class="content-row one-line">
+          <!-- You can limit the rows of the description by using the class one-line. If you remove it, all the content from the row will be shown -->
+          <ion-col no-padding width-90 class="item-content">
+            <h3 class="item-title">{{hw.name}}</h3>
+            <p class="item-description">{{hw.description}}</p>
+          </ion-col>
+          <ion-col no-padding width-10 class="item-icon">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-list>
+  </div>
+  </div>
 </ion-content>

@@ -22,6 +22,8 @@ diary-page {
 		}
 	}
 
+
+
 	.diary-content
 	{
 		.image-heading
@@ -56,11 +58,47 @@ diary-page {
 			}
 		}
 
+		.list-mini-content
+		{
+		background-color: color($colors, background, base);
+
+		.list-mini
+		{
+			@include layout-list-styles($theme-color-2, $white-d);
+
+			ion-list {
+				.list-item
+				{
+					.content-row
+					{
+						.item-title{
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+
+						&.one-line
+						{
+							@include align-items(center);
+
+							.item-description
+							{
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+						}
+					}
+				}
+			}
+		}
+		}
 
 		.user-content-segment
 		{
 			@include element-shadow();
 			padding-top: 4%;
+			padding-bottom: 2%;
 			background-color: $white;
 
 			@include segment-button-styles($theme-color-2);

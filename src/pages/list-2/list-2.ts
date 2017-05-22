@@ -6,6 +6,8 @@ import 'rxjs/Rx';
 import { List2Model } from './list-2.model';
 import { List2Service } from './list-2.service';
 
+
+
 @Component({
   selector: 'list-2-page',
   templateUrl: 'list-2.html'
@@ -13,6 +15,7 @@ import { List2Service } from './list-2.service';
 export class List2Page {
   list2: List2Model = new List2Model();
   loading: any;
+
 
   constructor(
     public nav: NavController,
@@ -32,4 +35,10 @@ export class List2Page {
       });
   }
 
+}
+
+export class ListModel {
+  name: string;
+  image: string;
+  description: string;
 }

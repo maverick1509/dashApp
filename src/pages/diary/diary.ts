@@ -22,7 +22,7 @@ export class DiaryPage {
     public diaryService: DiaryService,
     public loadingCtrl: LoadingController
   ) {
-    this.segment = "today";
+    this.segment = "notices";
     this.loading = this.loadingCtrl.create();
   }
 
@@ -38,6 +38,7 @@ export class DiaryPage {
         this.diary.posts = data.posts;
         this.diary.today = data.today;
         this.diary.upcoming = data.upcoming;
+        this.diary.homeworks = data.homeworks;
         this.loading.dismiss();
       });
   }

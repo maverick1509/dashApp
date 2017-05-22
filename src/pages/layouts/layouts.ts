@@ -5,7 +5,6 @@ import { SchedulePage } from '../schedule/schedule';
 import { List1Page } from '../list-1/list-1';
 import { List2Page } from '../list-2/list-2';
 import { GridPage } from '../grid/grid';
-import { NotificationsPage } from '../notifications/notifications';
 import { ProfilePage } from '../profile/profile';
 
 @Component({
@@ -21,7 +20,6 @@ export class LayoutsPage {
       { title: 'Lists', note: '(Big)', component: List1Page },
       { title: 'Lists', note: '(Mini)', component: List2Page },
       { title: 'Grid', component: GridPage },
-      { title: 'Notifications', component: NotificationsPage },
       { title: 'Profile', component: ProfilePage }
     ];
   }

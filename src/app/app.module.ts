@@ -9,7 +9,7 @@ import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
-import { NotificationsPage } from '../pages/notifications/notifications';
+import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsNavigationPage } from '../pages/tabs-navigation/tabs-navigation';
@@ -39,7 +39,7 @@ import { FeedService } from '../pages/feed/feed.service';
 import { DiaryService } from '../pages/diary/diary.service';
 import { DashboardService } from '../pages/dashboard/dashboard.service';
 import { ProfileService } from '../pages/profile/profile.service';
-import { NotificationsService } from '../pages/notifications/notifications.service';
+import { TimelineService } from '../pages/timeline/timeline.service';
 import { MessagesService } from '../pages/messages/messages.service';
 import { List1Service } from '../pages/list-1/list-1.service';
 import { List2Service } from '../pages/list-2/list-2.service';
@@ -55,7 +55,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     LayoutsPage,
     FormsPage,
     LoginPage,
-    NotificationsPage,
+    TimelinePage,
     MessagesPage,
     ProfilePage,
     TabsNavigationPage,
@@ -93,7 +93,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     LayoutsPage,
     FormsPage,
     LoginPage,
-    NotificationsPage,
+    TimelinePage,
     MessagesPage,
     ProfilePage,
     TabsNavigationPage,
@@ -110,7 +110,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     TermsOfServicePage,
     PrivacyPolicyPage
   ],
-  providers: [FeedService, DiaryService, DashboardService, ProfileService, NotificationsService, MessagesService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

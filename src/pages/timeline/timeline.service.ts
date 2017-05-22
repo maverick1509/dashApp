@@ -2,16 +2,16 @@ import { Injectable } from "@angular/core";
 import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { NotificationsModel } from './notifications.model';
+import { TimelineModel } from './timeline.model';
 
 @Injectable()
-export class NotificationsService {
+export class TimelineService {
   constructor(public http: Http) {}
 
-  getData(): Promise<NotificationsModel> {
-    return this.http.get('./assets/example_data/notifications.json')
+  getData(): Promise<TimelineModel> {
+    return this.http.get('./assets/example_data/timeline.json')
      .toPromise()
-     .then(response => response.json() as NotificationsModel)
+     .then(response => response.json() as TimelineModel)
      .catch(this.handleError);
   }
 
