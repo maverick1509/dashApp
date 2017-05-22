@@ -20,11 +20,15 @@
       </ion-col>
     </ion-row>
   </ion-scroll>
+  <div class="settings-content">
+    <button class="alt-button" ion-button full (click)="showPrivacyModal()">Apply for Leave</button>
+    <button class="alt-button" ion-button full (click)="showTermsModal()">Pay Fees</button>
+  </div>
   <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
     <ion-segment-button value="notices" (ionSelect)="onSegmentSelected($event)">
         Notices
     </ion-segment-button>
-     <ion-segment-button value="events" (ionSelect)="onSegmentSelected($event)">
+    <ion-segment-button value="events" (ionSelect)="onSegmentSelected($event)">
         Events
     </ion-segment-button>
     <ion-segment-button value="hws" (ionSelect)="onSegmentSelected($event)">
@@ -89,8 +93,7 @@
         </ion-item>
       </ion-list>
     </div>
-  </div> 
-  <div class="list-mini-content">
+  <div *ngSwitchCase="'hws'" class="list-mini-content">
   <div class="list-mini">
     <ion-list>
       <button class="list-item" ion-item *ngFor="let hw of diary.homeworks">
@@ -106,6 +109,7 @@
         </ion-row>
       </button>
     </ion-list>
+  </div>
   </div>
   </div>
 </ion-content>

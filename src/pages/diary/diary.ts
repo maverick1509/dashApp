@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, SegmentButton, LoadingController } from 'ionic-angular';
+import { NavController, ModalController, SegmentButton, LoadingController } from 'ionic-angular';
+import { FormGroup, FormControl } from '@angular/forms';
 
 import { FeedPage } from '../feed/feed';
 import 'rxjs/Rx';
@@ -7,22 +8,25 @@ import 'rxjs/Rx';
 import { DiaryModel } from './diary.model';
 import { DiaryService } from './diary.service';
 
+import { LeavePage } from '../leave/leave';
+import { PaymentPage } from '../payment/payment';
 
 @Component({
   selector: 'diary-page',
   templateUrl: 'diary.html',
 })
 export class DiaryPage {
-  segment: string;  
+  display: string;  
   diary: DiaryModel = new DiaryModel();
   loading: any;
 
   constructor(
     public nav: NavController,
     public diaryService: DiaryService,
+    public modal: ModalController,
     public loadingCtrl: LoadingController
   ) {
-    this.segment = "notices";
+    this.display = "notices";
     this.loading = this.loadingCtrl.create();
   }
 
@@ -58,6 +62,16 @@ export class DiaryPage {
     this.nav.push(FeedPage, {
       category: category
     });
+  }
+
+  showLeaveModal() {
+    let modal = this.modal.create(LeavePage);
+    modal.present();
+  }
+
+  showPaymentModal() {
+    let modal = this.modal.create(PaymentPage);
+    modal.present();
   }
 
 }

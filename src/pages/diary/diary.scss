@@ -22,8 +22,6 @@ diary-page {
 		}
 	}
 
-
-
 	.diary-content
 	{
 		.image-heading
@@ -361,6 +359,22 @@ diary-page {
 			}
 		}
 		}
+	}
+	.settings-content
+	{
+		background-color: color($colors, background, base);
+			
+		.alt-button
+		{
+			margin: 0px;
+			background-color: $white;
+			font-size: 1.4rem;
+			letter-spacing: 0.2px;
+			color: $white-d;
+
+			@include element-shadow();
+		}
+
 	}
 }
 

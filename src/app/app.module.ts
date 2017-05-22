@@ -26,6 +26,8 @@ import { FiltersPage } from '../pages/filters/filters';
 
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 import { PrivacyPolicyPage } from '../pages/privacy-policy/privacy-policy';
+import { LeavePage } from '../pages/leave/leave';
+import { PaymentPage } from '../pages/payment/payment';
 
 import { PreloadImage } from '../components/preload-image/preload-image';
 import { BackgroundImage } from '../components/background-image/background-image';
@@ -71,6 +73,8 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     FiltersPage,
     TermsOfServicePage,
     PrivacyPolicyPage,
+    LeavePage,
+    PaymentPage,
 
     PreloadImage,
     BackgroundImage,
@@ -108,7 +112,9 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     FormLayoutPage,
     FiltersPage,
     TermsOfServicePage,
-    PrivacyPolicyPage
+    PrivacyPolicyPage,
+    LeavePage,
+    PaymentPage
   ],
   providers: [FeedService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
