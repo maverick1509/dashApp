@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, SegmentButton, AlertController } from 'ionic-angular';
+import { NavController, SegmentButton, AlertController, LoadingController } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -7,22 +7,21 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
   templateUrl: 'leave.html'
 })
 export class LeavePage {
-  section: string;
-
+  loading: any;
   event_form: FormGroup;
 
-  constructor(public nav: NavController, public alertCtrl: AlertController) {
-    this.section = "event";
+  constructor(public nav: NavController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create();
+    this.event_form = new FormGroup({
+      title: new FormControl('', Validators.required),
+      location: new FormControl('', Validators.required),
+      from_date: new FormControl('2016-09-18', Validators.required),
+      from_time: new FormControl('13:00', Validators.required),
+      to_date: new FormControl('', Validators.required),
+      to_time: new FormControl('', Validators.required)
+    });
   }
-
-  onSegmentChanged(segmentButton: SegmentButton) {
-    // console.log('Segment changed to', segmentButton.value);
-  }
-
-  onSegmentSelected(segmentButton: SegmentButton) {
-    // console.log('Segment selected', segmentButton.value);
-  }
-
+  
   createEvent(){
     console.log(this.event_form.value);
   }

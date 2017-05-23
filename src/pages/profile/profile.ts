@@ -26,7 +26,6 @@ export class ProfilePage {
     public loadingCtrl: LoadingController
   ) {
     this.display = "list";
-
     this.loading = this.loadingCtrl.create();
   }
 
@@ -42,6 +41,8 @@ export class ProfilePage {
         this.loading.dismiss();
       });
   }
+
+
 
   goToFollowersList() {
     // close the menu when clicking a link from the menu

@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, SegmentButton, LoadingController } from 'ionic-angular';
-import { FormGroup, FormControl } from '@angular/forms';
+import { NavController, SegmentButton, LoadingController, MenuController, App } from 'ionic-angular';
 
 import { FeedPage } from '../feed/feed';
 import 'rxjs/Rx';
 
 import { DiaryModel } from './diary.model';
 import { DiaryService } from './diary.service';
-
 import { LeavePage } from '../leave/leave';
 import { PaymentPage } from '../payment/payment';
+
 
 @Component({
   selector: 'diary-page',
@@ -23,7 +22,8 @@ export class DiaryPage {
   constructor(
     public nav: NavController,
     public diaryService: DiaryService,
-    public modal: ModalController,
+    public menu: MenuController,
+    public app: App,
     public loadingCtrl: LoadingController
   ) {
     this.display = "notices";
@@ -35,13 +35,10 @@ export class DiaryPage {
     this.diaryService
       .getData()
       .then(data => {
-        this.diary.banner_image = data.banner_image;
-        this.diary.banner_title = data.banner_title;
         this.diary.teachers = data.teachers;
-        this.diary.categories = data.categories;
         this.diary.posts = data.posts;
         this.diary.today = data.today;
-        this.diary.upcoming = data.upcoming;
+        this.diary.categories = data.categories;
         this.diary.homeworks = data.homeworks;
         this.loading.dismiss();
       });
@@ -64,14 +61,13 @@ export class DiaryPage {
     });
   }
 
-  showLeaveModal() {
-    let modal = this.modal.create(LeavePage);
-    modal.present();
+  goToLeave(){
+    this.menu.close();
+    this.app.getRootNav().push(LeavePage);
   }
 
-  showPaymentModal() {
-    let modal = this.modal.create(PaymentPage);
-    modal.present();
+  goToPayment(){
+    this.menu.close();
+    this.app.getRootNav().push(PaymentPage);
   }
-
 }
