@@ -35,10 +35,8 @@ export class DiaryPage {
     this.diaryService
       .getData()
       .then(data => {
-        this.diary.teachers = data.teachers;
         this.diary.posts = data.posts;
         this.diary.today = data.today;
-        this.diary.categories = data.categories;
         this.diary.homeworks = data.homeworks;
         this.loading.dismiss();
       });

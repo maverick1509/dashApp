@@ -12,36 +12,6 @@
 </ion-header>
 
 <ion-content class="diary-content">
-  <h4 class="categories-title">Teachers</h4>
-  <ion-scroll scrollX="true" class="horizontal-categories">
-    <ion-row class="categories-row">
-      <ion-col width-30 class="horizontal-item"  *ngFor="let teacher of diary.teachers">
-        <preload-image [ratio]="{w:1, h:1}" [src]="teacher.image" title="teacher.title"></preload-image>
-      </ion-col>
-    </ion-row>
-  </ion-scroll>
-  <div class="listing-content">
-  <ion-row class="grid-categories">
-    <ion-col width-50 class="category-item">
-      <background-image tappable class="category-heading" (click)="goToLeave()">
-        <ion-row class="heading-row">
-          <ion-col no-padding width-100>
-            <h2 class="category-title">Apply for Leave</h2>
-          </ion-col>
-        </ion-row>
-      </background-image>
-    </ion-col>
-    <ion-col width-50 class="category-item">
-      <background-image tappable class="category-heading" (click)="goToPayment()">
-        <ion-row class="heading-row">
-          <ion-col no-padding width-100>
-            <h2 class="category-title">Fee Payment</h2>
-          </ion-col>
-        </ion-row>
-      </background-image>
-    </ion-col>
-  </ion-row>
-  </div>
   <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
     <ion-segment-button value="notices" (ionSelect)="onSegmentSelected($event)">
         Notices

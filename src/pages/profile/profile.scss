@@ -1,17 +1,66 @@
 profile-page {
 	.profile-content
-	{
+	{	
+		$categories-heading-image-height: 150px;
+		$categories-grid-padding: 10px;
+		$categories-horizontal-list-padding: 10px;
 		background-color: color($colors, background, base);
 
-		.user-details
+			.categories-title
 		{
+			font-size: 1.5rem;
+			font-weight: 400;
+			letter-spacing: 0.7px;
+			color: $white-d;
+			margin: 8px 16px 16px;
+		}
+		.horizontal-categories
+		{
+			border-bottom: 10px solid $white-a;
+			@include element-shadow();
+			padding-bottom: 16px;
+
+			.scroll-content
+			{
+				position: relative;
+				contain: style layout;
+			}
+
+			preload-image {
+				border-radius: 50%;
+
+				img	{
+					border-radius: 50%;
+				}
+			}
+
+			.categories-row
+			{
+				@include flex-wrap(nowrap);
+
+				&::after{
+					content: '';
+					flex: 0 0 $categories-horizontal-list-padding;
+			    max-width: $categories-horizontal-list-padding;
+				}
+
+			}
+
+			.horizontal-item
+			{
+				padding: 0px 0px 0px $categories-horizontal-list-padding;
+			}
+		}
+
+		.user-details
+		{	
 			@include element-shadow();
 			padding-bottom: 4%;
 			background-color: $white;
-
+		
 			.user-main-data-row
 			{
-				padding: 4% 4% 0px;
+				padding: 4% 2% 0px;
 				@include align-items(center);
 
 				.user-image
@@ -21,27 +70,15 @@ profile-page {
 
 				.social-presence-row
 				{
-					padding: 0px 0px 5px 10px;
+					padding: 0px 0px 5px 3px;
 				}
 
-				.profile-action-row
-				{
-					padding: 5px 0px 0px 10px;
-
-					.button
-					{
-						margin: 0px;
-						border-radius: 6px;
-						background-color: color($colors, button-alt, base);
-						color: color($colors, button-alt, contrast);
-						font-weight: 500;
-					}
-				}
-
+			
 				.social-presence-item
-				{
+				{	
+					color: $white-d;
 					text-align: center;
-					padding: 0px 5px;
+					padding: 0px 2px;
 
 					&:first-child
 					{
@@ -63,10 +100,17 @@ profile-page {
 						font-size: 2.2rem;
 					}
 
+					.social-presence-value2
+					{
+						padding-top: 3%;
+						margin: 0px;
+						font-size: 1.6rem;
+					}
+
 					.social-presence-title
 					{
 						margin: 0px;
-						font-size: 1.2rem;
+						font-size: 1.4rem;
 						font-weight: 400;
 						line-height: 1.1;
 						letter-spacing: 0.2px;
@@ -100,7 +144,7 @@ profile-page {
 
 				.user-description
 				{
-					font-size: 1.2rem;
+					font-size: 1.4rem;
 					line-height: 1.6;
 					letter-spacing: 0.2px;
 					color: $white-d;
@@ -161,5 +205,97 @@ profile-page {
 
 			}
 		}
+		.user-details2
+	{	
+		padding-top: 4%;
+		@include element-shadow();
+		padding-bottom: 4%;
+		background-color: $white;
+
+
+			.grid-categories
+		{
+			padding: 0px ($categories-grid-padding/2);
+			@include flex-wrap(wrap);
+
+			.category-item
+			{
+				padding: 0px ($categories-grid-padding/2) $categories-grid-padding;
+
+				.category-heading
+				{
+					padding-bottom: 100%;
+
+					.bg-overlay
+					{
+						z-index: 1;
+						background-color: rgba($black-c, .6);
+					}
+
+					ion-spinner {
+						z-index: 2;
+					}
+
+					@include spinner-color($white);
+
+					.heading-row
+					{
+						height: 100%;
+						width: 100%;
+						z-index: 3;
+		  			position: absolute;
+						@include align-items(center);
+
+						.category-title
+						{
+							@include categories-title-style($white);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.user-details3
+		{	
+			@include element-shadow();
+			padding-bottom: 4%;
+			background-color: $white;
+		
+			.user-bio-row
+			{
+				padding: 4%;
+
+				.user-name
+				{
+					font-size: 1.6rem;
+					font-weight: 500;
+					letter-spacing: 0.2px;
+					color: grey;
+					margin: 0px;
+				}
+
+				.user-location
+				{
+					font-size: 1.2rem;
+					font-weight: 500;
+					letter-spacing: 0.2px;
+					color: $white-d;
+					display: block;
+				  text-align: right;
+				  line-height: 1.6;
+				}
+
+				.user-description
+				{
+					font-size: 1.2rem;
+					line-height: 1.6;
+					letter-spacing: 0.2px;
+					color: $white-d;
+					margin: 10px 0px 0px;
+				}
+			}
+		}
+
 	}
 }
