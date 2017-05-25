@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, SegmentButton, App, NavParams, LoadingController } from 'ionic-angular';
-
-import { FollowersPage } from '../followers/followers';
-import { SettingsPage } from '../settings/settings';
+import { MenuController, App, NavParams, LoadingController } from 'ionic-angular';
 
 import 'rxjs/Rx';
 

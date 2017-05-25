@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { FormLayoutPage } from '../form-layout/form-layout';
-import { FiltersPage } from '../filters/filters';
+import { TodayTimeTablePage } from '../todaytimetable/todaytimetable';
+import { DateTimeTablePage } from '../datetimetable/datetimetable';
+import { DayTimeTableListPage } from '../daytimetablelist/daytimetablelist';
 
 @Component({
   selector: 'timetablelist-page',
@@ -13,9 +14,9 @@ export class TimeTablelistPage {
 
   constructor(public nav: NavController) {
     this.items = [
-      { title: "Today's time table", component: FormLayoutPage },
-      { title: 'Daywise time table', component: FiltersPage },
-      { title: 'Datewise time table', component: FiltersPage }
+      { title: "Today's time table", component: TodayTimeTablePage },
+      { title: 'Daywise time table', component: DayTimeTableListPage },
+      { title: 'Datewise time table', component: DateTimeTablePage }
     ];
   }
 

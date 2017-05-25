@@ -1,0 +1,59 @@
+{
+    "today":[
+      {
+        "subject": "Physics",
+        "location": "7 Vanbrugh Park Road West",
+        "date": {
+          "starttime": "7:00",
+          "month": "11",
+          "endtime": "8:00",
+          "time": "11:00 am",
+          "dt": "30/11"
+        }
+      },
+      {
+        "subject": "Chemistry",
+        "location": "123 Fake Street",
+        "date": {
+          "starttime": "8:00",
+          "month": "11",
+          "endtime": "9:00",
+          "time": "1:00 pm",
+          "dt": "30/11"
+        }
+      },
+      {
+        "subject": "Maths",
+        "location": "Skype",
+        "date": {
+          "starttime": "9:00",
+          "month": "11",
+          "endtime": "10:00",
+          "time": "2:30 pm",
+          "dt": "30/11"
+        }
+      },
+      {
+        "subject": "Biology",
+        "location": "Ritz",
+        "date": {
+          "starttime": "10:00",
+          "month": "11",
+          "endtime": "11:00",
+          "time": "5:00 pm",
+          "dt": "30/11"
+        }
+      },
+      {
+        "subject": "Computer Science",
+        "location": "34 Soho Street",
+        "date": {
+          "starttime": "11:00",
+          "month": "11",
+          "endtime": "12:00",
+          "time": "8:00 pm",
+          "dt": "30/11"
+        }
+      }
+    ]
+}

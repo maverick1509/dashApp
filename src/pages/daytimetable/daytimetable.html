@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Daily Time Table</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="daytimetable-content">
+    <div>
+      <ion-list class="daytimetable-list">
+        <ion-item class="daytimetable-item" *ngFor="let item of daytimetable.day">
+          <ion-row>
+            <ion-col width-35 class="daytimetable-date">
+              <h2 class="daytimetable-day">{{ item.date.starttime + "-" }} </h2>
+              <h3 class="daytimetable-day">{{item.date.endtime}}</h3>
+              <h4 class="daytimetable-time">{{item.date.dt}}</h4>
+            </ion-col>
+            <ion-col width-65 class="daytimetable-data">
+              <div class="data-item">
+                <div class="item-content">
+                  <h2 class="item-title one-line">{{item.subject}}</h2>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="navigate"></ion-icon>
+                    <p class="description-text one-line">{{item.location}}</p>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+</ion-content>

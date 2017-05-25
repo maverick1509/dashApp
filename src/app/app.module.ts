@@ -24,6 +24,11 @@ import { GridPage } from '../pages/grid/grid';
 import { FormLayoutPage } from '../pages/form-layout/form-layout';
 import { FiltersPage } from '../pages/filters/filters';
 import { TimeTablelistPage } from '../pages/timetablelist/timetablelist';
+import { DayTimeTableListPage } from '../pages/daytimetablelist/daytimetablelist';
+import { TodayTimeTablePage } from '../pages/todaytimetable/todaytimetable';
+import { DateTimeTablePage } from '../pages/datetimetable/datetimetable';
+import { DayTimeTablePage } from '../pages/daytimetable/daytimetable';
+
 
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
 import { PrivacyPolicyPage } from '../pages/privacy-policy/privacy-policy';
@@ -47,6 +52,8 @@ import { MessagesService } from '../pages/messages/messages.service';
 import { List1Service } from '../pages/list-1/list-1.service';
 import { List2Service } from '../pages/list-2/list-2.service';
 import { ScheduleService } from '../pages/schedule/schedule.service';
+import { TodayTimeTableService } from '../pages/todaytimetable/todaytimetable.service';
+import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +65,10 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
+    TodayTimeTablePage,
+    DateTimeTablePage,
+    DayTimeTablePage,
+    DayTimeTableListPage,
     LoginPage,
     TimelinePage,
     MessagesPage,
@@ -99,6 +110,10 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
+    TodayTimeTablePage,
+    DateTimeTablePage,
+    DayTimeTablePage,
+    DayTimeTableListPage,
     LoginPage,
     TimelinePage,
     MessagesPage,
@@ -119,7 +134,7 @@ import { ScheduleService } from '../pages/schedule/schedule.service';
     LeavePage,
     PaymentPage
   ],
-  providers: [FeedService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService, TodayTimeTableService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, DayTimeTableService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
