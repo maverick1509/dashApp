@@ -11,6 +11,7 @@ import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
+import { iMessagePage } from '../pages/imessage/imessage';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsNavigationPage } from '../pages/tabs-navigation/tabs-navigation';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
@@ -72,6 +73,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LoginPage,
     TimelinePage,
     MessagesPage,
+    iMessagePage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,
@@ -117,6 +119,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LoginPage,
     TimelinePage,
     MessagesPage,
+    iMessagePage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,

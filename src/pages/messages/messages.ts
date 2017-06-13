@@ -6,6 +6,8 @@ import 'rxjs/Rx';
 import { MessagesModel } from './messages.model';
 import { MessagesService } from './messages.service';
 
+import { iMessagePage } from '../imessage/imessage';
+
 @Component({
   selector: 'messages-page',
   templateUrl: 'messages.html'
@@ -32,4 +34,11 @@ export class MessagesPage {
           this.loading.dismiss();
       });
   }
+  goToMessage(message: any) {
+    this.nav.push(iMessagePage, {
+      message: message
+    });
+  }
+
+
 }

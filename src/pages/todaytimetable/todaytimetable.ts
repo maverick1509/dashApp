@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, SegmentButton, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import 'rxjs/Rx';
 
 import { TodayTimeTableModel } from './todaytimetable.model';
