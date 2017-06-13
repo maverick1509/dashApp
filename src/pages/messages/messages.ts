@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 import { MessagesModel } from './messages.model';
 import { MessagesService } from './messages.service';
 
-import { iMessagePage } from '../imessage/imessage';
+import { ChatPage } from '../chat/chat';
 
 @Component({
   selector: 'messages-page',
@@ -35,7 +35,7 @@ export class MessagesPage {
       });
   }
   goToMessage(message: any) {
-    this.nav.push(iMessagePage, {
+    this.nav.push(ChatPage, {
       message: message
     });
   }

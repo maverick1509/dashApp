@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'imessage-page',
-  templateUrl: 'imessage.html'
+  selector: 'chat-page',
+  templateUrl: 'chat.html'
 })
-export class iMessagePage {
-
+export class ChatPage {
+	
   constructor(public nav: NavController) {}
 
 }

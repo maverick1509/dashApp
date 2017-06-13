@@ -15,14 +15,5 @@
       <p class="item-description">{{message.message}}</p>
       <ion-note class="item-time" item-right>{{message.date}}</ion-note>
     </ion-item>
-    <ion-item-divider class="messages-divider">Yesterday</ion-item-divider>
-    <ion-item tappable class="message-item" *ngFor="let message of messages.yesterday" (click)="goToMessage(message)">
-      <ion-avatar item-left>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [src]="message.image"></preload-image>
-      </ion-avatar>
-      <h2 class="item-title">{{message.name}}</h2>
-      <p class="item-description">{{message.message}}</p>
-      <ion-note class="item-time" item-right>{{message.date}}</ion-note>
-    </ion-item>
   </ion-item-group>
 </ion-content>

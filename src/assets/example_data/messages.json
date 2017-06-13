@@ -17,9 +17,7 @@
         "image": "./assets/images/notifications/100x100Notification3.jpg",
         "message": "Alessia wrote on your timeline",
         "date": "1:54 pm"
-      }
-    ],
-    "yesterday":[
+      },
       {
         "name": "George",
         "image": "./assets/images/notifications/100x100Notification4.jpeg",

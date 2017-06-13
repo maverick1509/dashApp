@@ -11,7 +11,7 @@ import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
-import { iMessagePage } from '../pages/imessage/imessage';
+import { ChatPage } from '../pages/chat/chat';
 import { ProfilePage } from '../pages/profile/profile';
 import { TabsNavigationPage } from '../pages/tabs-navigation/tabs-navigation';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
@@ -43,6 +43,9 @@ import { ShowHideInput } from '../components/show-hide-password/show-hide-input'
 import { ColorRadio } from '../components/color-radio/color-radio';
 import { CounterInput } from '../components/counter-input/counter-input';
 import { Rating } from '../components/rating/rating';
+import {ElasticTextarea} from '../components/elasticTextarea';
+import {ProfileHeader} from '../components/profileHeader';
+import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 import { FeedService } from '../pages/feed/feed.service';
 import { DiaryService } from '../pages/diary/diary.service';
@@ -73,7 +76,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LoginPage,
     TimelinePage,
     MessagesPage,
-    iMessagePage,
+    ChatPage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,
@@ -97,7 +100,10 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     ShowHideInput,
     ColorRadio,
     CounterInput,
-    Rating
+    Rating,
+    ElasticTextarea,
+    ProfileHeader,
+    ChatBubble
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -119,7 +125,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LoginPage,
     TimelinePage,
     MessagesPage,
-    iMessagePage,
+    ChatPage,
     ProfilePage,
     TabsNavigationPage,
     WalkthroughPage,
