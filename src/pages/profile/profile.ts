@@ -41,13 +41,4 @@ export class ProfilePage {
       });
   }
 
-  goToLeave(){
-    this.menu.close();
-    this.app.getRootNav().push(LeavePage);
-  }
-   goToTimeTable(){
-    this.menu.close();
-    this.app.getRootNav().push(TimeTablelistPage);
-  }
-
 }

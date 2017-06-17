@@ -3,6 +3,21 @@ timeline-page {
 	{
 		background-color: color($colors, background, base);
 
+		.user-content-segment
+		{
+			@include element-shadow();
+			padding-top: 4%;
+			padding-bottom: 2%;
+			background-color: $white;
+
+			@include segment-button-styles($theme-color-2);
+
+			.segment-button
+			{
+				@include segment-text-styles($white-d);
+			}
+		}
+
 		.user-content
 		{
 			.list-view

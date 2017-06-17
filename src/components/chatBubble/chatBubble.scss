@@ -52,26 +52,22 @@
   }
 
   .chat-bubble.left {
-    background-color: map-get(orange, background-left);
     float: left;
     margin-left: 45px;
   }
 
   .chat-bubble.left:before {
-    background-color: map-get(orange, background-left);
     left: 10px;
     -webkit-transform: rotate(70deg) skew(5deg);
   }
 
   .chat-bubble.right {
-    background-color: map-get(orange, background-right);
     color: #000;
     float: right;
     margin-right: 45px;
   }
 
   .chat-bubble.right:before {
-    background-color: map-get(orange, background-right);
     right: 10px;
     -webkit-transform: rotate(118deg) skew(-5deg);
   }

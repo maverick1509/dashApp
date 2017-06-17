@@ -6,8 +6,9 @@ import 'rxjs/Rx';
 
 import { DiaryModel } from './diary.model';
 import { DiaryService } from './diary.service';
+
 import { LeavePage } from '../leave/leave';
-import { PaymentPage } from '../payment/payment';
+import { TimeTablelistPage } from '../timetablelist/timetablelist';
 
 
 @Component({
@@ -27,6 +28,7 @@ export class DiaryPage {
     public loadingCtrl: LoadingController
   ) {
     this.display = "notices";
+    
     this.loading = this.loadingCtrl.create();
   }
 
@@ -36,7 +38,6 @@ export class DiaryPage {
       .getData()
       .then(data => {
         this.diary.posts = data.posts;
-        this.diary.today = data.today;
         this.diary.homeworks = data.homeworks;
         this.loading.dismiss();
       });
@@ -63,9 +64,8 @@ export class DiaryPage {
     this.menu.close();
     this.app.getRootNav().push(LeavePage);
   }
-
-  goToPayment(){
+   goToTimeTable(){
     this.menu.close();
-    this.app.getRootNav().push(PaymentPage);
+    this.app.getRootNav().push(TimeTablelistPage);
   }
 }

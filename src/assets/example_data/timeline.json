@@ -56,5 +56,62 @@
         "liked": false,
         "date": "9/9/2016"
       }
+    ],
+   "today":[
+      {
+        "subject": "Meeting with Alex",
+        "location": "7 Vanbrugh Park Road West",
+        "date": {
+          "day": "30",
+          "month": "11",
+          "month_name": "NOV",
+          "time": "11:00 am",
+          "full": "30/11 - 11:00 am"
+        }
+      },
+      {
+        "subject": "Lunch with Seth",
+        "location": "123 Fake Street",
+        "date": {
+          "day": "30",
+          "month": "11",
+          "month_name": "NOV",
+          "time": "1:00 pm",
+          "full": "30/11 - 1:00 pm"
+        }
+      },
+      {
+        "subject": "Conference Call with UY",
+        "location": "Skype",
+        "date": {
+          "day": "30",
+          "month": "11",
+          "month_name": "NOV",
+          "time": "2:30 pm",
+          "full": "30/11 - 2:30 pm"
+        }
+      },
+      {
+        "subject": "Afternoon Tea with Sara",
+        "location": "Ritz",
+        "date": {
+          "day": "30",
+          "month": "11",
+          "month_name": "NOV",
+          "time": "5:00 pm",
+          "full": "30/11 - 5:00 pm"
+        }
+      },
+      {
+        "subject": "Dinner Party at LeRouge",
+        "location": "34 Soho Street",
+        "date": {
+          "day": "30",
+          "month": "11",
+          "month_name": "NOV",
+          "time": "8:00 pm",
+          "full": "30/11 - 8:00 pm"
+        }
+      }
     ]
  }

@@ -1,12 +1,3 @@
-export class UserModel {
-  image: string;
-  location: string;
-  about: string;
-  email: string;
-  phone: string;
-  name: string;
-}
-
 export class TimelinePostModel {
   date: Date;
 	image: string;
@@ -17,8 +8,20 @@ export class TimelinePostModel {
 }
 
 export class TimelineModel {
-  user: UserModel = new UserModel();
-  following: Array<UserModel> = [];
-  followers: Array<UserModel> = [];
   posts: Array<TimelinePostModel> = [];
+  today: Array<EventModel> = [];
+}
+
+export class EventModel {
+  subject: string;
+  location: string;
+  date: EventDate;
+}
+
+export class EventDate {
+  day: string;
+  month: string;
+  month_name: string;
+  time: string;
+  full: string;
 }

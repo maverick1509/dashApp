@@ -1,12 +1,9 @@
 export class DiaryModel {
 
   posts: Array<DiaryPostModel> = [];
-  today: Array<EventModel> = [];
-  upcoming: Array<EventModel> = [];
   homeworks: Array<ListModel>;
 
 }
-
 
 export class DiaryPostModel {
     date: Date;
@@ -17,22 +14,8 @@ export class DiaryPostModel {
 	liked: boolean = false;
 }
 
-export class EventModel {
-  subject: string;
-  location: string;
-  date: EventDate;
-}
-
-export class EventDate {
-  day: string;
-  month: string;
-  month_name: string;
-  time: string;
-  full: string;
-}
-
 export class ListModel {
   name: string;
-  image: string;
   description: string;
 }
+

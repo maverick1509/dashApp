@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, App, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, MenuController, App, NavParams, LoadingController } from 'ionic-angular';
 
 
 import 'rxjs/Rx';
@@ -19,11 +19,12 @@ export class TimelinePage {
   constructor(
     public menu: MenuController,
     public app: App,
+    public nav: NavController,
     public navParams: NavParams,
     public timelineService: TimelineService,
     public loadingCtrl: LoadingController
   ) {
-    this.display = "list";
+    this.display = "notices";
 
     this.loading = this.loadingCtrl.create();
   }
@@ -34,6 +35,7 @@ export class TimelinePage {
       .getData()
       .then(data => {
         this.timeline.posts = data.posts;
+        this.timeline.today = data.today;
         this.loading.dismiss();
       });
   }
