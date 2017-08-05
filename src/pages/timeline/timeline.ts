@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController, App, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, MenuController, App, NavParams, SegmentButton, LoadingController } from 'ionic-angular';
 
 
 import 'rxjs/Rx';
@@ -38,5 +38,14 @@ export class TimelinePage {
         this.timeline.today = data.today;
         this.loading.dismiss();
       });
+  }
+
+  
+onSegmentChanged(segmentButton: SegmentButton) {
+     console.log('Segment changed to', segmentButton.value);
+  }
+
+  onSegmentSelected(segmentButton: SegmentButton) {
+     console.log('Segment selected', segmentButton.value);
   }
 }
