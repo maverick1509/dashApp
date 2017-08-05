@@ -4,7 +4,8 @@ import { NavController, MenuController, App, NavParams, SegmentButton, LoadingCo
 
 import 'rxjs/Rx';
 
-import { TimelineModel } from './timeline.model';
+import { TimelineEvent } from './timeline.model';
+import { TimelinePost } from './timeline.model';
 import { TimelineService } from './timeline.service';
 
 @Component({
@@ -13,7 +14,8 @@ import { TimelineService } from './timeline.service';
 })
 export class TimelinePage {
   display: string;
-  timeline: TimelineModel = new TimelineModel();
+  timeline: TimelinePost = new TimelinePost();
+  timeline2: TimelineEvent = new TimelineEvent();
   loading: any;
 
   constructor(
@@ -35,7 +37,13 @@ export class TimelinePage {
       .getData()
       .then(data => {
         this.timeline.posts = data.posts;
-        this.timeline.today = data.today;
+        this.loading.dismiss();
+      });
+
+    this.timelineService
+      .getData2()
+      .then(data => {
+        this.timeline2.today = data.today;
         this.loading.dismiss();
       });
   }

@@ -1,17 +1,35 @@
 import { Injectable } from "@angular/core";
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { TimelineModel } from './timeline.model';
+import { TimelinePost } from './timeline.model';
+import { TimelineEvent } from './timeline.model';
 
 @Injectable()
 export class TimelineService {
   constructor(public http: Http) {}
 
-  getData(): Promise<TimelineModel> {
+  getData(): Promise<TimelinePost> {
+
+    let headers= new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+
+
+    return this.http.post('http://schooldash.xyz/fetchnotifications.php', '', {headers : headers})
+     .toPromise()
+     .then(response => response.json())
+     .catch(this.handleError);
+  }
+
+   getData2(): Promise<TimelineEvent> {
     return this.http.get('./assets/example_data/timeline.json')
      .toPromise()
-     .then(response => response.json() as TimelineModel)
+     .then(response => response.json())
      .catch(this.handleError);
   }
 
@@ -21,3 +39,4 @@ export class TimelineService {
   }
 
 }
+.

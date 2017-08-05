@@ -1,14 +1,22 @@
 export class TimelinePostModel {
   date: Date;
-	image: string;
-	description: string;
-	likes: number = 0;
-	comments: number = 0;
-	liked: boolean = false;
+	url: string;
+	brief: string;
+  userID: string;
+  photoFlag: boolean;
+  id: any;
+	
+//  likes: number = 0;
+//	comments: number = 0;
+//	liked: boolean = false;
+
 }
 
-export class TimelineModel {
+export class TimelinePost {
   posts: Array<TimelinePostModel> = [];
+}
+
+export class TimelineEvent {
   today: Array<EventModel> = [];
 }
 
