@@ -5,10 +5,8 @@ export class TimelinePostModel {
   userID: string;
   photoFlag: boolean;
   id: any;
-	
-//  likes: number = 0;
-//	comments: number = 0;
-//	liked: boolean = false;
+  likes: number = 0;
+	liked: boolean = false;
 
 }
 
