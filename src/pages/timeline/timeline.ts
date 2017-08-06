@@ -43,7 +43,7 @@ export class TimelinePage {
     this.timelineService
       .getData2()
       .then(data => {
-        this.timeline2.today = data.today;
+        this.timeline2.posts = data.posts;
         this.loading.dismiss();
       });
   }

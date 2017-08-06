@@ -6,7 +6,7 @@ export class TimelinePostModel {
   photoFlag: boolean;
   id: any;
   likes: number = 0;
-	liked: boolean = false;
+	liked: boolean = true;
 
 }
 
@@ -15,7 +15,7 @@ export class TimelinePost {
 }
 
 export class TimelineEvent {
-  today: Array<EventModel> = [];
+  posts: Array<EventModel> = [];
 }
 
 export class EventModel {
