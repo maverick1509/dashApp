@@ -1,0 +1,57 @@
+<ion-header class="dashboard-header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="header-logo">
+        <preload-image [ratio]="{w:583, h:100}" src="./assets/images/header_logo_white.png"></preload-image>
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dashboard-content">
+  <ion-item-group>
+    <ion-item-divider>Browse categories</ion-item-divider>
+    <ion-row class="grid-1 grid-example">
+      <ion-col width-100 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h1 class="item-title">Analysis Graph</h1>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="grid-2 grid-example">
+      <ion-col width-67 class="grid-item">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner multi-line">
+            <h1 class="item-title">Progress Card</h1>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col width-33 class="grid-item double-item">
+        <ion-col width-100 class="grid-item">
+          <div class="grid-item-wrapper">
+            <div class="grid-item-inner">
+              <h2 class="item-title">Time Table</h2>
+            </div>
+          </div>
+          <div class="grid-item-wrapper">
+            <div class="grid-item-inner">
+              <h2 class="item-title">Time Table</h2>
+            </div>
+          </div>
+        </ion-col>
+      </ion-col>
+      <ion-col width-33 class="grid-item" *ngFor="let item of dashboard.items">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-inner">
+            <h4 class="item-title">{{ item.title }}</h4>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Today's Time Table</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="todaytimetable-content">
+    <div>
+      <ion-list class="todaytimetable-list">
+        <ion-item class="todaytimetable-item" *ngFor="let item of todaytimetable.today">
+          <ion-row>
+            <ion-col width-35 class="todaytimetable-date">
+              <h2 class="todaytimetable-day">{{ item.date.starttime + "-" }} </h2>
+              <h3 class="todaytimetable-day">{{item.date.endtime}}</h3>
+              <h4 class="todaytimetable-time">{{item.date.dt}}</h4>
+            </ion-col>
+            <ion-col width-65 class="todaytimetable-data">
+              <div class="data-item">
+                <div class="item-content">
+                  <h2 class="item-title one-line">{{item.subject}}</h2>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="navigate"></ion-icon>
+                    <p class="description-text one-line">{{item.location}}</p>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,183 @@
+{
+    "banner_image": "./assets/images/listing/600x300banner1.png",
+    "banner_title": "Peevees Model School",
+    "teachers": [
+        {
+            "title": "Air Sports",
+            "image": "./assets/images/listing/300x300AirSports.png"
+        },
+        {
+            "title": "Water Sports",
+            "image": "./assets/images/listing/300x300WaterSports.png"
+        },
+        {
+            "title": "Beach Sports",
+            "image": "./assets/images/listing/300x300BeachSports.png"
+        },
+        {
+            "title": "Extreme Sports",
+            "image": "./assets/images/listing/300x300ExtremeSports.png"
+        },
+        {
+            "title": "Athletic Sports",
+            "image": "./assets/images/listing/300x300AthleticSports.png"
+        },
+        {
+            "title": "Combat Sports",
+            "image": "./assets/images/listing/300x300CombatSports.png"
+        }
+    ],
+
+     "posts":[
+      {
+        "image": "./assets/images/profile/posts/500x500profile1.png",
+        "description": "Did you know I play the violin? Classical music always helps me wind down after a game. #violin #cavaliers #nba",
+        "likes": 52,
+        "comments": 5,
+        "liked": true,
+        "date": "17/11/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile2.jpg",
+        "description": "#Sushi #Night with my friend @kobebryant",
+        "likes": 11,
+        "comments": 3,
+        "liked": false,
+        "date": "14/11/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile3.jpg",
+        "description": "Thank you @BarackObama for introducing me at the #WhiteHouseParty",
+        "likes": 221,
+        "comments": 11,
+        "liked": true,
+        "date": "10/10/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile4.jpg",
+        "description": "#SquadGoals @dwyanewade @justintimberlake",
+        "likes": 20,
+        "comments": 1,
+        "liked": false,
+        "date": "02/10/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile5.jpg",
+        "description": "It’s game night with the #Cavaliers ! #StriveForGreatness",
+        "likes": 99,
+        "comments": 101,
+        "liked": true,
+        "date": "22/9/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile6.jpg",
+        "description": "Congratulations @luissuarez @neymarjr @lionelmessi for the big #Barca WIN! ",
+        "likes": 32,
+        "comments": 7,
+        "liked": false,
+        "date": "10/9/2016"
+      },
+      {
+        "image": "./assets/images/profile/posts/500x500profile7.jpg",
+        "description": "I want to fly like an eagle, To the sea Fly like an eagle, Let my spirit carry me I want to fly, Fly right into the future ",
+        "likes": 10,
+        "comments": 9,
+        "liked": false,
+        "date": "9/9/2016"
+      }
+    ],
+    "upcoming":[
+      {
+        "subject": "Rehearsal Dinner at Thai Palace",
+        "location": "15 Orchard Avenue",
+        "date": {
+          "day": "01",
+          "month": "12",
+          "month_name": "DEC",
+          "time": "7:00 pm",
+          "full": "01/12 - 7:00 pm"
+        }
+      },
+      {
+        "subject": "Lunch Date with Ryan",
+        "location": "23 Downing Street",
+        "date": {
+          "day": "02",
+          "month": "12",
+          "month_name": "DEC",
+          "time": "12:30 pm",
+          "full": "02/12 - 12:30 pm"
+        }
+      },
+      {
+        "subject": "The Rolling Stones Tour",
+        "location": "O2 Arena, Greenwich",
+        "date": {
+          "day": "04",
+          "month": "12",
+          "month_name": "DEC",
+          "time": "6:00 pm",
+          "full": "04/12 - 6:00 pm"
+        }
+      },
+      {
+        "subject": "Holiday Shopping",
+        "location": "Westfield Shopping Mall",
+        "date": {
+          "day": "15",
+          "month": "12",
+          "month_name": "DEC",
+          "time": "3:00 pm",
+          "full": "15/12 - 3:00 pm"
+        }
+      },
+      {
+        "subject": "Christmas Break",
+        "location": "Berkhamsted, Hertfordshire",
+        "date": {
+          "day": "24",
+          "month": "12",
+          "month_name": "DEC",
+          "time": "1:00 pm",
+          "full": "24/12 - 1:00 pm"
+        }
+      }
+  ],
+     "homeworks": [
+    {
+      "name": "Crossfit WorldWide Event",
+      "image": "./assets/images/lists/200x200EventCrossfit.png",
+      "description": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
+    },
+    {
+      "name": "US Open",
+      "image": "./assets/images/lists/200x200EventUSOpen.png",
+      "description": "The United States Open Tennis Championships is a hardcourt tennis tournament. The tournament is the modern version of one of the oldest tennis championships in the world, the U.S. National Championship, for which men's singles was first contested in 1881."
+    },
+    {
+      "name": "The Basketball Tournament",
+      "image": "./assets/images/lists/200x200TBT.png",
+      "description": "The Basketball Tournament (TBT) is an open-application, single-elimination tournament played each summer in the United States, currently featuring 64 teams. It was founded in 2014 by Jonathan Mugar."
+    },
+    {
+      "name": "British Open",
+      "image": "./assets/images/lists/200x200BritishOpen.png",
+      "description": "The Open Championship, often referred to as The Open or the British Open, is the oldest of the four major championships in professional golf. Held in the United Kingdom, it is administered by The R&A and is the only major outside the United States."
+    },
+    {
+      "name": "FIFA World Cup",
+      "image": "./assets/images/lists/200x200FIFA.png",
+      "description": "The FIFA World Cup, often simply called the World Cup, is an international association football competition contested by the senior men's national teams of the members of Fédération Internationale de Football Association (FIFA), the sport's global governing body."
+    }
+  ],
+     "categories": [
+        {
+            "title": "Apply for Leave",
+            "image": "./assets/images/listing/200x200basquet.png"
+        },
+        {
+            "title": "Fee Payment",
+            "image": "./assets/images/listing/200x200boxeo.png"
+        }
+  ]
+}

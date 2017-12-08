@@ -15,7 +15,6 @@ import { SettingsPage } from '../pages/settings/settings';
 export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
-
   // make WalkthroughPage the root (or first) page
   rootPage: any = WalkthroughPage;
 

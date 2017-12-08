@@ -21,4 +21,10 @@ export class ProfileModel {
   following: Array<UserModel> = [];
   followers: Array<UserModel> = [];
   posts: Array<ProfilePostModel> = [];
+  teachers: Array<TeacherModel>;
+}
+
+export class TeacherModel {
+  title: string;
+  image: string;
 }

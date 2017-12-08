@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+</ion-content>
+
+<ion-footer class="chatPageFooter">
+  <ion-toolbar>
+
+    <ion-item>
+      <ion-label style="margin:0px; background-color: white;"></ion-label>
+      <div item-content style="width:100%;">
+        <elastic-textarea #txtChat placeholder="Type to compose" lineHeight="22"></elastic-textarea>
+      </div>
+    </ion-item>
+
+    <ion-buttons right>
+      <button ion-button icon-only style="min-width:45px;">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

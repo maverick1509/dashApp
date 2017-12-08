@@ -13,23 +13,22 @@
       <ion-col no-padding>
         <ion-row class="social-presence-row">
           <ion-col width-50 class="social-presence-item">
-            <a (click)="goToFollowersList()">
-              <h2 class="social-presence-value">{{profile.followers.length}}</h2>
-              <h4 class="social-presence-title">Followers</h4>
-            </a>
+              <h2 class="social-presence-value">{{profile.user.class}}</h2>
+              <h4 class="social-presence-title">Class</h4>
           </ion-col>
           <ion-col width-50 class="social-presence-item">
-            <a (click)="goToFollowingList()">
-              <h2 class="social-presence-value">{{profile.following.length}}</h2>
-              <h4 class="social-presence-title">Following</h4>
-            </a>
+              <h2 class="social-presence-value">{{profile.user.division}}</h2>
+              <h4 class="social-presence-title">Division</h4>
           </ion-col>
         </ion-row>
-        <ion-row class="profile-action-row">
-          <ion-col no-padding>
-            <button ion-button block small (click)="goToSettings()">
-              Edit profile
-            </button>
+        <ion-row class="social-presence-row" style="padding-top: 2%;">
+          <ion-col width-50 no-padding class="social-presence-item">
+            <h3 class="social-presence-value2"> {{profile.user.rollNo}} </h3>
+            <h4 class="social-presence-title">Roll No</h4>
+          </ion-col>
+          <ion-col width-50 no-padding class="social-presence-item">
+            <h3 class="social-presence-value2"> {{profile.user.stream}} </h3>
+            <h4 class="social-presence-title">Stream</h4>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -38,64 +37,91 @@
       <ion-col no-padding width-50>
         <h2 class="user-name">{{profile.user.name}}</h2>
       </ion-col>
-      <ion-col no-padding width-50>
-        <span class="user-location">{{profile.user.location}}</span>
-      </ion-col>
       <ion-col no-padding width-100>
         <p class="user-description">
           {{profile.user.about}}
         </p>
       </ion-col>
     </ion-row>
-    <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
-      <ion-segment-button value="grid" (ionSelect)="onSegmentSelected($event)">
-        Grid
-      </ion-segment-button>
-      <ion-segment-button value="list" (ionSelect)="onSegmentSelected($event)">
-        List
-      </ion-segment-button>
-    </ion-segment>
   </div>
-  <div [ngSwitch]="display" class="user-content">
-    <div *ngSwitchCase="'list'" class="list-view">
-      <div class="list-item" *ngFor="let post of profile.posts">
-        <span class="item-date">{{post.date}}</span>
-        <ion-card>
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
-          <ion-card-content>
-            <p class="item-text">
-              {{post.description}}
-            </p>
-          </ion-card-content>
-          <ion-row no-padding class="actions-row">
-            <ion-col no-padding width-30 text-left>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
-                  {{post.likes}} Likes
-              </button>
-            </ion-col>
-            <ion-col no-padding width-45 text-center>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon name='chatbubbles'></ion-icon>
-                  {{post.comments}} Comments
-              </button>
-            </ion-col>
-            <ion-col no-padding width-25 text-right>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon name='share-alt'></ion-icon>
-                Share
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-      </div>
-    </div>
-    <div *ngSwitchCase="'grid'" class="grid-view">
-      <ion-row wrap class="grid-row">
-        <ion-col width-33 class="grid-item" *ngFor="let post of profile.posts">
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>
+  <h4 class="categories-title">Teachers</h4>
+  <ion-scroll scrollX="true" class="horizontal-categories">
+    <ion-row class="categories-row">
+      <ion-col width-30 class="horizontal-item"  *ngFor="let teacher of profile.teachers">
+        <preload-image [ratio]="{w:1, h:1}" [src]="teacher.image" title="teacher.title"></preload-image>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+  <div class="user-details2">
+    <div class="listing-content">
+      <ion-row class="grid-categories">
+        <ion-col width-50 class="category-item">
+          <background-image tappable class="category-heading" (click)="goToLeave()">
+            <ion-row class="heading-row">
+              <ion-col no-padding width-100>
+                <h2 class="category-title">Apply for Leave</h2>
+              </ion-col>
+            </ion-row>
+          </background-image>
+        </ion-col>
+        <ion-col width-50 class="category-item">
+          <background-image tappable class="category-heading" (click)="goToTimeTable()">
+            <ion-row class="heading-row">
+              <ion-col no-padding width-100>
+                <h2 class="category-title">Time Table</h2>
+              </ion-col>
+            </ion-row>
+          </background-image>
         </ion-col>
       </ion-row>
     </div>
   </div>
+  <div style="padding-top: 2%;"></div>
+  <div class="user-details" style="padding-top: 1%;">
+    <h4 class="categories-title">More student info</h4>
+    <ion-row wrap class="user-bio-row">
+      <ion-col no-padding width-100>
+        <h2 class="user-name">Address</h2>
+      </ion-col>
+      <ion-col no-padding width-100>
+        <p class="user-description">
+          {{profile.user.address}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row wrap class="user-bio-row">
+      <ion-col no-padding width-100>
+        <h2 class="user-name">Date of birth</h2>
+      </ion-col>
+      <ion-col no-padding width-100>
+        <p class="user-description">
+          {{profile.user.dob}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row wrap class="user-bio-row">
+      <ion-col no-padding width-100>
+        <h2 class="user-name">E-mail</h2>
+      </ion-col>
+      <ion-col no-padding width-100>
+        <p class="user-description">
+          {{profile.user.email}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row wrap class="user-bio-row">
+      <ion-col no-padding width-100>
+        <h2 class="user-name">Phone number</h2>
+      </ion-col>
+      <ion-col no-padding width-100>
+        <p class="user-description">
+          {{profile.user.phone}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+
+  </div>
+
+
 </ion-content>

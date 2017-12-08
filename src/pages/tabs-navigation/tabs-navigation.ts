@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-import { ListingPage } from '../listing/listing';
+import { DiaryPage } from '../diary/diary';
 import { ProfilePage } from '../profile/profile';
-import { NotificationsPage } from '../notifications/notifications';
+import { MessagesPage } from '../messages/messages';
+import { TimelinePage } from '../timeline/timeline';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'tabs-navigation',
@@ -12,10 +14,14 @@ export class TabsNavigationPage {
   tab1Root: any;
   tab2Root: any;
   tab3Root: any;
+  tab4Root: any;
+  tab5Root: any;
 
   constructor() {
-    this.tab1Root = ListingPage;
-    this.tab2Root = ProfilePage;
-    this.tab3Root = NotificationsPage;
+    this.tab1Root = DiaryPage;
+    this.tab2Root = DashboardPage;
+    this.tab3Root = TimelinePage;
+    this.tab4Root = MessagesPage;
+    this.tab5Root = ProfilePage;
   }
 }

@@ -6,7 +6,6 @@ import { TermsOfServicePage } from '../terms-of-service/terms-of-service';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
 
 import { WalkthroughPage } from '../walkthrough/walkthrough';
-
 import 'rxjs/Rx';
 
 import { ProfileModel } from '../profile/profile.model';

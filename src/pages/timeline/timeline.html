@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Timeline</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="timeline-content">
+   <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="notices" (ionSelect)="onSegmentSelected($event)">
+        Notices
+    </ion-segment-button>
+    <ion-segment-button value="events" (ionSelect)="onSegmentSelected($event)">
+        Events
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'notices'" class="list-view">
+      <ng-container *ngIf="timeline.posts">
+      <div class="list-item" *ngFor="let post of timeline.posts">
+        <span class="item-date">{{post.date}}</span>
+        <ion-card>
+          <preload-image *ngIf="post.url" [ratio]="{w:1, h:1}" [src]="post.url" title=""></preload-image>
+          <ion-card-content>
+            <p class="item-text">
+              {{post.brief}}
+            </p>
+          </ion-card-content>
+          <ion-row no-padding class="actions-row">
+            <ion-col no-padding width-30 text-left>
+              <button class="action-button" ion-button clear small color="danger" icon-left>
+                <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
+                  {{post.likes}} Likes
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      </ng-container>
+      <ng-container *ngIf="!timeline.posts">
+        <ion-card>
+
+    <img src="./assets/images/oops.jpg"/>
+
+    <ion-card-content>
+      <ion-card-title style="font-size: 1.6em; text-align: center;">
+        NO RECENT NOTICES
+        <p style="text-align: center;">COME BACK LATER <ion-icon name="happy"></ion-icon></p>
+
+      </ion-card-title>
+    </ion-card-content>
+
+  </ion-card>
+      </ng-container>
+
+    </div>
+
+
+    <div *ngSwitchCase="'events'">
+    <ng-container *ngIf="timeline2.posts">
+    <ion-list class="schedule-list">
+        <ion-item class="schedule-item" *ngFor="let item of timeline2.posts">
+          <ion-row>
+            <ion-col width-20 class="schedule-date">
+              <h2 class="schedule-day">{{item.date.day}}</h2>
+              <h3 class="schedule-month">{{item.date.month_name}}</h3>
+              <h4 class="schedule-time">{{item.date.time}}</h4>
+            </ion-col>
+            <ion-col width-80 class="schedule-data">
+              <div class="data-item">
+                <div class="item-content">
+                  <h2 class="item-title one-line">{{item.subject}}</h2>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="clock"></ion-icon>
+                    <p class="description-text">{{item.date.full}}</p>
+                  </div>
+                  <div class="item-description">
+                    <ion-icon class="description-icon" name="navigate"></ion-icon>
+                    <p class="description-text one-line">{{item.location}}</p>
+                  </div>
+                </div>
+                <ion-icon class="item-icon" name="arrow-forward"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+      </ng-container>
+      <ng-container *ngIf="!timeline2.posts">
+        <ion-card>
+
+    <img src="./assets/images/oops.jpg"/>
+
+    <ion-card-content>
+      <ion-card-title style="font-size: 1.6em; text-align: center;">
+        NO RECENT EVENTS
+        <p style="text-align: center;">COME BACK LATER <ion-icon name="happy"></ion-icon></p>
+
+      </ion-card-title>
+    </ion-card-content>
+
+  </ion-card>
+      </ng-container>
+    </div>
+  </div>
+</ion-content>

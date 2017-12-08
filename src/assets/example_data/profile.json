@@ -1,6 +1,12 @@
 {
     "user": {
         "name": "LeBron James",
+        "class": 12,
+        "division": "A",
+        "rollNo" : "ed16b054",
+        "address" : "S-12 905, Smondoville, Neo Town, Electronic City, Bangalore",
+        "stream": "Engineering",
+        "dob": "1997-11-25",
         "location": "Ohio, USA",
         "about": "Philosophy is considered a science but it is difficult to say, when one has to compare with an ordinary science, for example biology, or chemistry.",
         "email": "kingjames@gmail.com",
@@ -89,62 +95,30 @@
             "inverse_relation": true
         }
     ],
-    "posts":[
-      {
-        "image": "./assets/images/profile/posts/500x500profile1.png",
-        "description": "Did you know I play the violin? Classical music always helps me wind down after a game. #violin #cavaliers #nba",
-        "likes": 52,
-        "comments": 5,
-        "liked": true,
-        "date": "17/11/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile2.jpg",
-        "description": "#Sushi #Night with my friend @kobebryant",
-        "likes": 11,
-        "comments": 3,
-        "liked": false,
-        "date": "14/11/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile3.jpg",
-        "description": "Thank you @BarackObama for introducing me at the #WhiteHouseParty",
-        "likes": 221,
-        "comments": 11,
-        "liked": true,
-        "date": "10/10/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile4.jpg",
-        "description": "#SquadGoals @dwyanewade @justintimberlake",
-        "likes": 20,
-        "comments": 1,
-        "liked": false,
-        "date": "02/10/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile5.jpg",
-        "description": "It’s game night with the #Cavaliers ! #StriveForGreatness",
-        "likes": 99,
-        "comments": 101,
-        "liked": true,
-        "date": "22/9/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile6.jpg",
-        "description": "Congratulations @luissuarez @neymarjr @lionelmessi for the big #Barca WIN! ",
-        "likes": 32,
-        "comments": 7,
-        "liked": false,
-        "date": "10/9/2016"
-      },
-      {
-        "image": "./assets/images/profile/posts/500x500profile7.jpg",
-        "description": "I want to fly like an eagle, To the sea Fly like an eagle, Let my spirit carry me I want to fly, Fly right into the future ",
-        "likes": 10,
-        "comments": 9,
-        "liked": false,
-        "date": "9/9/2016"
-      }
+    "teachers": [
+        {
+            "title": "Air Sports",
+            "image": "./assets/images/listing/300x300AirSports.png"
+        },
+        {
+            "title": "Water Sports",
+            "image": "./assets/images/listing/300x300WaterSports.png"
+        },
+        {
+            "title": "Beach Sports",
+            "image": "./assets/images/listing/300x300BeachSports.png"
+        },
+        {
+            "title": "Extreme Sports",
+            "image": "./assets/images/listing/300x300ExtremeSports.png"
+        },
+        {
+            "title": "Athletic Sports",
+            "image": "./assets/images/listing/300x300AthleticSports.png"
+        },
+        {
+            "title": "Combat Sports",
+            "image": "./assets/images/listing/300x300CombatSports.png"
+        }
     ]
 }

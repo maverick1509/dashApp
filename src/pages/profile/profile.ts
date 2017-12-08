@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
-import { MenuController, SegmentButton, App, NavParams, LoadingController } from 'ionic-angular';
-
-import { FollowersPage } from '../followers/followers';
-import { SettingsPage } from '../settings/settings';
+import { MenuController, App, NavParams, LoadingController } from 'ionic-angular';
 
 import 'rxjs/Rx';
 
 import { ProfileModel } from './profile.model';
 import { ProfileService } from './profile.service';
 
+import { LeavePage } from '../leave/leave';
+import { TimeTablelistPage } from '../timetablelist/timetablelist';
+
 @Component({
   selector: 'profile-page',
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-  display: string;
   profile: ProfileModel = new ProfileModel();
   loading: any;
 
@@ -25,8 +24,6 @@ export class ProfilePage {
     public profileService: ProfileService,
     public loadingCtrl: LoadingController
   ) {
-    this.display = "list";
-
     this.loading = this.loadingCtrl.create();
   }
 
@@ -39,37 +36,9 @@ export class ProfilePage {
         this.profile.following = data.following;
         this.profile.followers = data.followers;
         this.profile.posts = data.posts;
+        this.profile.teachers = data.teachers;
         this.loading.dismiss();
       });
   }
 
-  goToFollowersList() {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    this.app.getRootNav().push(FollowersPage, {
-      list: this.profile.followers
-    });
-  }
-
-  goToFollowingList() {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    this.app.getRootNav().push(FollowersPage, {
-      list: this.profile.following
-    });
-  }
-
-  goToSettings() {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
-    this.app.getRootNav().push(SettingsPage);
-  }
-
-  onSegmentChanged(segmentButton: SegmentButton) {
-    // console.log('Segment changed to', segmentButton.value);
-  }
-
-  onSegmentSelected(segmentButton: SegmentButton) {
-    // console.log('Segment selected', segmentButton.value);
-  }
 }

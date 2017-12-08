@@ -1,0 +1,24 @@
+ion-app.md {
+	leave-page {
+
+		.checkbox-list .checkbox-item
+		{
+		  margin-left: 1px;
+		}
+
+		.radio-group .radio-item
+		{
+			margin-left: 1px;
+		}
+
+		.range-item
+		{
+			@include range-item-md-styles($theme-color-1);
+		}
+
+		.switcher-item
+		{
+			@include switcher-item-md-styles($theme-color-1);
+		}
+	}
+}
