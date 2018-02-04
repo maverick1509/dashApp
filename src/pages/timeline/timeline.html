@@ -57,9 +57,9 @@
 
 
     <div *ngSwitchCase="'events'">
-    <ng-container *ngIf="timeline2.posts">
+    <ng-container *ngIf="timeline2.events">
     <ion-list class="schedule-list">
-        <ion-item class="schedule-item" *ngFor="let item of timeline2.posts">
+        <ion-item tappable class="schedule-item" *ngFor="let item of timeline2.events" (click)="openModal(item)">
           <ion-row>
             <ion-col width-20 class="schedule-date">
               <h2 class="schedule-day">{{item.date.day}}</h2>
@@ -86,7 +86,7 @@
         </ion-item>
       </ion-list>
       </ng-container>
-      <ng-container *ngIf="!timeline2.posts">
+      <ng-container *ngIf="!timeline2.events">
         <ion-card>
 
     <img src="./assets/images/oops.jpg"/>

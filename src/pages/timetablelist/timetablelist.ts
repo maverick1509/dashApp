@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { TodayTimeTablePage } from '../todaytimetable/todaytimetable';
-import { DateTimeTablePage } from '../datetimetable/datetimetable';
 import { DayTimeTableListPage } from '../daytimetablelist/daytimetablelist';
 
 @Component({
@@ -15,8 +14,7 @@ export class TimeTablelistPage {
   constructor(public nav: NavController) {
     this.items = [
       { title: "Today's time table", component: TodayTimeTablePage },
-      { title: 'Daywise time table', component: DayTimeTableListPage },
-      { title: 'Datewise time table', component: DateTimeTablePage }
+      { title: 'Daywise time table', component: DayTimeTableListPage }
     ];
   }
 

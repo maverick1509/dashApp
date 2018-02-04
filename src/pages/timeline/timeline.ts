@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController, App, NavParams, SegmentButton, LoadingController } from 'ionic-angular';
-
+import { NavController, MenuController, App, NavParams, SegmentButton, LoadingController, ModalController } from 'ionic-angular';
+import { EventModalPage } from '../event-modal/event-modal';
 
 import 'rxjs/Rx';
 
@@ -24,7 +24,8 @@ export class TimelinePage {
     public nav: NavController,
     public navParams: NavParams,
     public timelineService: TimelineService,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    public modalCtrl: ModalController
   ) {
     this.display = "notices";
 
@@ -43,13 +44,17 @@ export class TimelinePage {
     this.timelineService
       .getData2()
       .then(data => {
-        this.timeline2.posts = data.posts;
+        this.timeline2.events = data.events;
         this.loading.dismiss();
       });
   }
 
-  
-onSegmentChanged(segmentButton: SegmentButton) {
+  openModal(item){
+    let myModal = this.modalCtrl.create(EventModalPage, item);
+    myModal.present();
+  }
+
+  onSegmentChanged(segmentButton: SegmentButton) {
      console.log('Segment changed to', segmentButton.value);
   }
 

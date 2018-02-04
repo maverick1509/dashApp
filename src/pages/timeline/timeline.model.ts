@@ -15,7 +15,7 @@ export class TimelinePost {
 }
 
 export class TimelineEvent {
-  posts: Array<EventModel> = [];
+  events: Array<EventModel> = [];
 }
 
 export class EventModel {
