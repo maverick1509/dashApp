@@ -15,8 +15,8 @@
   <ion-fab right bottom>
     <button ion-fab color="danger"><ion-icon name="arrow-dropup" ></ion-icon></button>
     <ion-fab-list side="top">
-      <button (click)="goToTimeTable()">Time Table</button>
-      <button style="width: 80px; font-size: 20px; padding-right: 5%;" (click)="goToLeave()">Apply for Leave</button>
+      <button color="danger" ion-fab (click)="goToTimeTable()"><ion-icon name="md-calendar"></ion-icon></button>
+      <button color="danger" ion-fab (click)="goToLeave()"><ion-icon name="ios-paper"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
   <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">

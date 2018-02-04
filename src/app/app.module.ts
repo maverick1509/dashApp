@@ -27,8 +27,8 @@ import { FiltersPage } from '../pages/filters/filters';
 import { TimeTablelistPage } from '../pages/timetablelist/timetablelist';
 import { DayTimeTableListPage } from '../pages/daytimetablelist/daytimetablelist';
 import { TodayTimeTablePage } from '../pages/todaytimetable/todaytimetable';
-import { DateTimeTablePage } from '../pages/datetimetable/datetimetable';
 import { DayTimeTablePage } from '../pages/daytimetable/daytimetable';
+import { EventModalPage } from '../pages/event-modal/event-modal';
 
 
 import { TermsOfServicePage } from '../pages/terms-of-service/terms-of-service';
@@ -64,13 +64,13 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     MyApp,
     DiaryPage,
     DashboardPage,
+    EventModalPage,
     FeedPage,
     FollowersPage,
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
     TodayTimeTablePage,
-    DateTimeTablePage,
     DayTimeTablePage,
     DayTimeTableListPage,
     LoginPage,
@@ -114,12 +114,12 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     DiaryPage,
     DashboardPage,
     FeedPage,
+    EventModalPage,
     FollowersPage,
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
     TodayTimeTablePage,
-    DateTimeTablePage,
     DayTimeTablePage,
     DayTimeTableListPage,
     LoginPage,
