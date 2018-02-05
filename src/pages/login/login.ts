@@ -23,7 +23,8 @@ export class LoginPage {
     this.main_page = { component: LoginStudentPage };
 
     this.login = new FormGroup({
-      mobile: new FormControl('', Validators.required)
+      mobile: new FormControl('', Validators.required),
+      pass: new FormControl('', Validators.required)
     });
   }
 
@@ -49,6 +50,10 @@ export class LoginPage {
                 }, error => {
                 console.log(error);// Error getting the data
             });
+    }
+
+    goToForgotPassword(){
+      this.nav.push(ForgotPasswordPage);
     }
 
 }

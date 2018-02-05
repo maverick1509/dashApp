@@ -10,8 +10,12 @@
     <ion-item>
       <ion-input style="text-align: center;" type="mob" placeholder="Enter your mobile number" formControlName="mobile" minlength="10"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-input style="text-align: center;" type="password" placeholder="Password" formControlName="pass"></ion-input>
+    </ion-item>
     <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!login.valid">Log in</button>
   </form>
+  <p style="text-align:right;color: #919191;" (click)="goToForgotPassword()">Forgot Password?</p>
   <p style="text-align: center; color: red;">
   	{{err}}
   </p>
