@@ -1,0 +1,25 @@
+ion-app.md {
+	login-student-page {
+		.login-student-header
+		{
+			&::after
+			{
+				background: none;
+			}
+		}
+
+		.login-student-content
+		{
+			.button-bar
+			{
+				background: $white;
+  			border-radius: 6px;
+
+				& > .button
+				{
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}

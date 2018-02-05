@@ -22,7 +22,7 @@ $black-b: lighten($black, 20%);
 $black-c: lighten($black, 40%);
 $black-d: lighten($black, 60%);
 
-$theme-color-1: #00e9d5;
+$theme-color-1: #008b41;
 $theme-color-2: #ae75e7;
 $theme-color-3: #5e5874;
 
@@ -37,6 +37,7 @@ $theme-color-3: #5e5874;
 $colors: (
   primary:    #387ef5,
   secondary:  #32db64,
+  tertiary: #008b41,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,

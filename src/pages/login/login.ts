@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import { NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
-import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
-import { SignupPage } from '../signup/signup';
+import { LoginStudentPage } from '../login-student/login-student';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 @Component({
@@ -11,37 +12,43 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+
+  data: any;
+  err: any;
+  user = { token:null, name:null }
   login: FormGroup;
   main_page: { component: any };
 
-  constructor(public nav: NavController) {
-    this.main_page = { component: TabsNavigationPage };
+  constructor(public nav: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+    this.main_page = { component: LoginStudentPage };
 
     this.login = new FormGroup({
-      email: new FormControl('', Validators.required),
-      password: new FormControl('test', Validators.required)
+      mobile: new FormControl('', Validators.required)
     });
   }
 
   doLogin(){
     console.log(this.login.value);
-    this.nav.setRoot(this.main_page.component);
-  }
 
-  doFacebookLogin() {
-    this.nav.setRoot(this.main_page.component);
-  }
+    this.http.post("http://www.schooldash.xyz/services/parentlogin.php", this.login.value)
+                .subscribe(data => {
+                  console.log(data);
+                  this.data = JSON.parse(data['_body']);
+                  if(!this.data.status){
+                    this.err = this.data.error;
+                    console.log(this.err);
+                  }
 
-  doGoogleLogin() {
-    this.nav.setRoot(this.main_page.component);
-  }
-
-  goToSignup() {
-    this.nav.push(SignupPage);
-  }
-
-  goToForgotPassword() {
-    this.nav.push(ForgotPasswordPage);
-  }
+                  else{
+                    this.user.token = this.data.token;
+                    this.user.name = this.data.name;
+                    console.log(this.user)
+                    this.storage.set('user', this.user);
+                    this.nav.push(this.main_page.component, this.data);
+                  }
+                }, error => {
+                console.log(error);// Error getting the data
+            });
+    }
 
 }

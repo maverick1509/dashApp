@@ -1,7 +1,7 @@
 <ion-header class="walkthrough-header">
   <ion-toolbar>
     <ion-buttons end>
-      <button ion-button class="skip-button" (click)="skipIntro()" [hidden]="lastSlide">Skip</button>
+      <button ion-button class="skip-button" (click)="skipIntro()">Back</button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -59,7 +59,6 @@
       </p>
       <div class="button-bar">
         <button ion-button primary (click)="goToLogin()">Log in</button>
-        <button ion-button primary (click)="goToSignup()">Sign up</button>
       </div>
     </ion-slide>
   </ion-slides>

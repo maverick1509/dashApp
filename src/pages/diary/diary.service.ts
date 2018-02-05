@@ -8,12 +8,12 @@ import { DiaryModel } from './diary.model';
 export class DiaryService {
   constructor(public http: Http) {}
 
-  getData(): Promise<DiaryModel> {
-    return this.http.get('./assets/example_data/diary.json')
-     .toPromise()
-     .then(response => response.json() as DiaryModel)
-     .catch(this.handleError);
-  }
+    getData(): Promise<DiaryModel> {
+      return this.http.get('./assets/example_data/diary.json')
+       .toPromise()
+       .then(response => response.json() as DiaryModel)
+       .catch(this.handleError);
+    }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

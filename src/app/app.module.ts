@@ -1,14 +1,17 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 
 import { DiaryPage } from '../pages/diary/diary';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { FeedPage } from '../pages/feed/feed';
+import { LandingPage } from '../pages/landing/landing';
 import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
+import { LoginStudentPage } from '../pages/login-student/login-student';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
 import { ChatPage } from '../pages/chat/chat';
@@ -16,7 +19,6 @@ import { ProfilePage } from '../pages/profile/profile';
 import { TabsNavigationPage } from '../pages/tabs-navigation/tabs-navigation';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { SettingsPage } from '../pages/settings/settings';
-import { SignupPage } from '../pages/signup/signup';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SchedulePage } from '../pages/schedule/schedule';
 import { List1Page } from '../pages/list-1/list-1';
@@ -68,12 +70,14 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     FeedPage,
     FollowersPage,
     LayoutsPage,
+    LandingPage,
     FormsPage,
     TimeTablelistPage,
     TodayTimeTablePage,
     DayTimeTablePage,
     DayTimeTableListPage,
     LoginPage,
+    LoginStudentPage,
     TimelinePage,
     MessagesPage,
     ChatPage,
@@ -81,7 +85,6 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     TabsNavigationPage,
     WalkthroughPage,
     SettingsPage,
-    SignupPage,
     ForgotPasswordPage,
     SchedulePage,
     List1Page,
@@ -106,7 +109,8 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     ChatBubble
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -116,6 +120,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     FeedPage,
     EventModalPage,
     FollowersPage,
+    LandingPage,
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
@@ -123,6 +128,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     DayTimeTablePage,
     DayTimeTableListPage,
     LoginPage,
+    LoginStudentPage,
     TimelinePage,
     MessagesPage,
     ChatPage,
@@ -131,7 +137,6 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     WalkthroughPage,
     SettingsPage,
     ForgotPasswordPage,
-    SignupPage,
     SchedulePage,
     List1Page,
     List2Page,

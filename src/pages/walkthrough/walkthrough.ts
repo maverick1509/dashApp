@@ -1,8 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
+import { LandingPage } from '../landing/landing';
 
 @Component({
   selector: 'walkthrough-page',
@@ -19,12 +18,7 @@ export class WalkthroughPage {
   }
 
   skipIntro() {
-    // You can skip to main app
-    // this.nav.setRoot(TabsNavigationPage);
-
-    // Or you can skip to last slide (login/signup slide)
-    this.lastSlide = true;
-    this.slider.slideTo(this.slider.length());
+    this.nav.setRoot(LandingPage);
   }
 
   onSlideChanged() {
@@ -32,11 +26,4 @@ export class WalkthroughPage {
     this.lastSlide = this.slider.isEnd();
   }
 
-  goToLogin() {
-    this.nav.push(LoginPage);
-  }
-
-  goToSignup() {
-    this.nav.push(SignupPage);
-  }
 }

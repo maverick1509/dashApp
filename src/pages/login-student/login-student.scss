@@ -1,10 +1,10 @@
-walkthrough-page {
-	.walkthrough-header
+login-student-page {
+	.login-student-header
 	{
 		@include header-styles(color($colors, walkthrough-header, base), color($colors, walkthrough-header, contrast));
 	}
 
-	.walkthrough-content
+	.login-student-content
 	{
 		// Default background when bouncing isn't disabled
 		background-color: color($colors, walkthrough, base);

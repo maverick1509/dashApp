@@ -7,6 +7,7 @@ import { FormsPage } from '../pages/forms/forms';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { WalkthroughPage } from '../pages/walkthrough/walkthrough';
 import { SettingsPage } from '../pages/settings/settings';
+import { LandingPage } from '../pages/landing/landing';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
   // make WalkthroughPage the root (or first) page
-  rootPage: any = WalkthroughPage;
+  rootPage: any = LandingPage;
 
   pages: Array<{title: string, icon: string, component: any}>;
   pushPages: Array<{title: string, icon: string, component: any}>;
