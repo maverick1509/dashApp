@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 
 import { WalkthroughPage } from '../walkthrough/walkthrough';
 import { LoginPage } from '../login/login';
+import { LoginStudentPage } from '../login-student/login-student';
 
 @Component({
   selector: 'landing-page',
@@ -37,7 +38,6 @@ export class LandingPage {
 
             // Regenerate Token
             this.co_data.token = val.token; 
-            console.log('Old Token', val.token);
             this.http.post("http://www.schooldash.xyz/services/regeneratetoken.php", this.co_data)
                     .subscribe(data => {
                       console.log(data);
@@ -72,9 +72,16 @@ export class LandingPage {
     this.nav.push(LoginPage);
   }
 
+  goToLoginStudent(){
+    this.nav.push(LoginStudentPage);
+  }
+
   logout(){
     this.storage.remove('user');
     this.storage.remove('regNo');
+    this.user.token = null;
+    this.user.name = null;
+    this.user_name = "";
     this.isLoggedIn = false;
   }
 }

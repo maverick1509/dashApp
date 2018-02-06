@@ -5,7 +5,7 @@
     <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLogin()">Login</button>
   </div>
   <div *ngIf="isLoggedIn" style=" padding-top: 45%;">
-    <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLogin()">Continue as  <b>{{" "+user_name}}</b></button>
+    <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLoginStudent()">Continue as  <b>{{" "+user_name}}</b></button>
     <p style= "text-align: center;color: #008b41;" (click)="logout()">Logout</p>
   </div>
 </ion-content>

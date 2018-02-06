@@ -1,9 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Slides } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-
-import { LoginPage } from '../login/login';
-import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 
 @Component({
   selector: 'login-student-page',
@@ -11,34 +10,9 @@ import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 })
 export class LoginStudentPage {
 
-  children: any;
-
-  lastSlide = false;
-
-  @ViewChild('slider') slider: Slides;
-
-  constructor(public nav: NavController, public navParams: NavParams, public storage: Storage) {
+  constructor(public nav: NavController, public http: Http, public storage: Storage) {
 
   }
 
-  ionViewWillEnter(){
-    this.children = this.navParams.get('response');
-  }
-
-  onSlideChanged() {
-    // If it's the last slide, then hide the 'Skip' button on the header
-    this.lastSlide = this.slider.isEnd();
-  }
-
-  goToLogin() {
-    this.nav.push(LoginPage);
-  }
-
-  openMainPage(child){
-    this.storage.set('regNo', child);
-    this.storage.get('regNo').then((val) => {
-    console.log('Your regNo is', val);
-  });
-    this.nav.setRoot(TabsNavigationPage);
-  }
+  
 }

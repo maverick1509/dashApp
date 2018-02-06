@@ -1,27 +1,11 @@
-<ion-header class="login-student-header">
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="login-student-content">
-  <ion-slides #slider pager="true">
-    <ion-slide class="slide-1" *ngFor="let child of children">
-      <ion-row class="intro-image-row" (click)="openMainPage(child.regNo)">
-        <ion-col *ngIf="child.url" center width-64 no-padding>
-          <preload-image [ratio]="{w:1, h:1}" [src]="child.url" title="child.fName"></preload-image>
-        </ion-col>
-        <ion-col *ngIf="!child.url && child.gender == 'M'" center width-64 no-padding>
-          <img style="border-radius: 50%;" src="./assets/images/boy-avatar.png" title="child.fName">
-        </ion-col>
-        <ion-col *ngIf="!child.url && child.gender == 'F'" center width-64 no-padding>
-          <img style="border-radius: 50%;" src="./assets/images/girl-avatar.png" title="child.fName">
-        </ion-col>
-      </ion-row>
-        <h2 class="main-title" style="text-transform: uppercase;">{{child.fName + " " + child.lName}}</h2>
-        <p class="intro-text" style="font-size: 1.3em;font-style:italic;">
-          {{child.class + " - " + child.division}}
-        </p>
-      
-    </ion-slide>
-  </ion-slides>
+<ion-content class="login-student-content auth-content">
+  <img src="./assets/images/logo_school.png">
+  	<ion-item>
+	  <ion-label>Choose Student</ion-label>
+	  <ion-select [(ngModel)]="gender">
+	    <ion-option value="f">Female</ion-option>
+	    <ion-option value="m">Male</ion-option>
+	  </ion-select>
+	</ion-item>
+	<button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLogin()">Continue</button>
 </ion-content>

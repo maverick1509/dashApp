@@ -43,7 +43,6 @@ export class LoginPage {
                   else{
                     this.user.token = this.data.token;
                     this.user.name = this.data.name;
-                    console.log(this.user)
                     this.storage.set('user', this.user);
                     this.nav.push(this.main_page.component, this.data);
                   }
