@@ -15,7 +15,7 @@ export class LoginPage {
 
   data: any;
   err: any;
-  user = { token:null, name:null }
+  user = { token:null, name:null, lastTokenDate:null }
   login: FormGroup;
   main_page: { component: any };
 
@@ -43,7 +43,9 @@ export class LoginPage {
                   else{
                     this.user.token = this.data.token;
                     this.user.name = this.data.name;
+                    this.user.lastTokenDate = this.data.date;
                     this.storage.set('user', this.user);
+                    console.log(this.user)
                     this.nav.push(this.main_page.component, this.data);
                   }
                 }, error => {

@@ -1,11 +1,16 @@
+<ion-header class="login-header auth-header">
+  <ion-navbar>
+    <ion-title>Choose Student</ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content class="login-student-content auth-content">
   <img src="./assets/images/logo_school.png">
-  	<ion-item>
+  	<ion-item style="margin-top: 35%;">
 	  <ion-label>Choose Student</ion-label>
 	  <ion-select [(ngModel)]="gender">
-	    <ion-option value="f">Female</ion-option>
-	    <ion-option value="m">Male</ion-option>
+	    <ion-option *ngFor="let child of children" [value]="child.value">{{child.value}}</ion-option>
 	  </ion-select>
 	</ion-item>
-	<button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLogin()">Continue</button>
+	<button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToDiary()">Continue</button>
 </ion-content>
