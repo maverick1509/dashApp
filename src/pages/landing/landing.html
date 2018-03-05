@@ -1,11 +1,11 @@
 <ion-content class="landing-content auth-content">
-  <img src="./assets/images/logo_school.png">
+  <p style="text-align: center;"><img src="./assets/images/logo_school.png"></p>
   <div *ngIf="!isLoggedIn" style=" padding-top: 45%;">
     <p style= "text-align: center;color: #008b41;" (click)="goToWalkthrough()" >Explore</p>
     <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLogin()">Login</button>
   </div>
   <div *ngIf="isLoggedIn" style=" padding-top: 45%;">
-    <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLoginStudent()">Continue as  <b>{{" "+user_name}}</b></button>
-    <p style= "text-align: center;color: #008b41;" (click)="logout()">Logout</p>
+    <button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToLoginStudent()">Continue as <b>{{user_name}}</b></button>
+    <p style= "text-align: center;color: #008b41;" (click)="logoutAlert()">Logout</p>
   </div>
 </ion-content>

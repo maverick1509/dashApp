@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { WalkthroughPage } from '../walkthrough/walkthrough';
@@ -21,7 +21,7 @@ export class LandingPage {
   user_name: any;
   co_data = { token: null, name: null };
 
-  constructor(public nav: NavController, public http: Http, public storage: Storage) {
+  constructor(public nav: NavController, public alertCtrl: AlertController, public http: Http, public storage: Storage) {
 
   }
 
@@ -36,8 +36,8 @@ export class LandingPage {
 
       this.storage.get('user').then((val) => {
                     console.log(val);
-        var diff = Number(today) - val.lastTokenDate > 10;
         if(val!== null){
+          var diff = Number(today) - val.lastTokenDate > 10;
           this.isLoggedIn = true;
           this.user_name = val.name;
           
@@ -83,6 +83,30 @@ export class LandingPage {
 
   goToLoginStudent(){
     this.nav.push(LoginStudentPage);
+  }
+
+  logoutAlert(){
+    let alert = this.alertCtrl.create({
+    title: 'Logout',
+    message: 'Are you sure you want to logout?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Yes',
+        handler: () => {
+          this.logout();
+          console.log('Logged out!');
+        }
+      }
+    ]
+  });
+  alert.present();
   }
 
   logout(){

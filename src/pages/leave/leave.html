@@ -12,19 +12,20 @@
         <section class="form-section">
           <h2 class="section-title">Fill in the form</h2>
           <ion-item>
-            <ion-input type="text" placeholder="Reason" formControlName="title"></ion-input>
+            <ion-label floating>Reason</ion-label>
+            <ion-input type="text" placeholder="" formControlName="title"></ion-input>
           </ion-item>
           <ion-row no-padding class="multi-input-row">
             <ion-col no-padding width-50>
               <ion-item class="multi-input time-item">
                 <ion-label floating>From</ion-label>
-                <ion-datetime formControlName="from_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+                <ion-datetime formControlName="leaveFrom" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
               </ion-item>
             </ion-col>
             <ion-col no-padding width-50>
               <ion-item class="multi-input time-item">
                 <ion-label floating>To</ion-label>
-                <ion-datetime formControlName="to_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+                <ion-datetime formControlName="leaveTo" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
               </ion-item>
             </ion-col>
           </ion-row>

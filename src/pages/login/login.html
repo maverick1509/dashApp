@@ -1,6 +1,6 @@
 <ion-header class="login-header auth-header">
   <ion-navbar>
-    <ion-title>Sign in</ion-title>
+    <ion-title>Log in</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
     </ion-item>
     <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!login.valid">Log in</button>
   </form>
-  <p style="text-align:right;color: #919191;" (click)="goToForgotPassword()">Forgot Password?</p>
+  <p style="text-align:right;color: #919191;" (click)="goToForgotPassword()">Click here to login through OTP!</p>
   <p style="text-align: center; color: red;">
   	{{err}}
   </p>

@@ -27,21 +27,23 @@
         Homeworks
     </ion-segment-button>
   </ion-segment>
-  <button ion-button color= "danger" block style="width: 92%; margin-left: 4%; margin-top: 3%;">Pay Fees Online</button>
   <div [ngSwitch]="display" class="user-content">
     <div *ngSwitchCase="'notices'" class="list-view">
       <div class="list-item" *ngFor="let post of diary.posts">
-        <span class="item-date">{{post.date}}</span>
+        <span class="item-date">{{post.timestamp}}</span>
         <ion-card>
-          <preload-image *ngIf="post.image" [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
+          <preload-image *ngIf="post.isPhoto" [ratio]="{w:1, h:1}" [src]="post.photoURL" title=""></preload-image>
           <ion-card-content>
             <p class="item-text">
-              {{post.description}}
+              <strong>{{post.title}}</strong> is scheduled on <strong>{{post.eventDate}}</strong> from time <strong>{{post.timeFrom}}</strong> to <strong>{{post.timeTo}}</strong> at <strong>{{post.venue}}</strong> and is hosted by <strong>{{post.host}}</strong>
             </p>
+            <p class="item-text" style="padding-top: 3%;">
+              {{post.brief}}
+            </p>         
           </ion-card-content>
           <ion-row no-padding class="actions-row">
-            <ion-col no-padding width-30 text-left>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
+            <ion-col style="float: left;" no-padding width-30 text-left>
+              <button class="action-button" ion-button clear small color="danger" icon-left (click)='likePost(post.id)' >
                 <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
                   {{post.likes}} Likes
               </button>

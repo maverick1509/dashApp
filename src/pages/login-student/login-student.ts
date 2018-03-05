@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
@@ -11,13 +11,15 @@ import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 })
 export class LoginStudentPage {
 
-  constructor(public nav: NavController, public http: Http, public storage: Storage) {
-
+  constructor(public nav: NavController, public http: Http, public storage: Storage, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create();
   }
 
+  selectedChild: any;
   children: any;
-  co_data = { token: null, name: null };
+  co_data = { token: null, name: null, lastTokenDate: null };
   data: any;
+  loading: any;
 
     ionViewWillEnter(){
         this.storage.get('user').then((val) => {
@@ -41,8 +43,13 @@ export class LoginStudentPage {
         });
     }
 
-    goToDiary(){
-      this.nav.setRoot(TabsNavigationPage);
+    goToDiary(child){
+      this.storage.set('regNo', child);
+      this.loading.present();
+      setTimeout( () => {
+        this.nav.setRoot(TabsNavigationPage);
+        this.loading.dismiss();
+      }, 1000);
     }
 
 
