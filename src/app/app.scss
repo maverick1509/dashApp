@@ -10,6 +10,15 @@
 $output-bourbon-deprecation-warnings: false;
 @import "_bourbon";
 
+@font-face{
+font-family: Slabo 27px;
+src: url('../assets/fonts/slabo.woff2') format('woff2');
+}
+ 
+*{
+font-family: Slabo 27px;
+}
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

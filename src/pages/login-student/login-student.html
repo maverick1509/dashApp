@@ -5,12 +5,26 @@
 </ion-header>
 
 <ion-content class="login-student-content auth-content">
-  <img src="./assets/images/logo_school.png">
-  	<ion-item style="margin-top: 35%;">
-	  <ion-label>Choose Student</ion-label>
-	  <ion-select [(ngModel)]="gender">
-	    <ion-option *ngFor="let child of children" [value]="child.value">{{child.value}}</ion-option>
-	  </ion-select>
-	</ion-item>
-	<button ion-button block style="width: 92%; margin-left: 4%; margin-top: 3%;background-color: #008b41" (click)= "goToDiary()">Continue</button>
+  <p style="text-align: center;"><img src="./assets/images/logo_school.png"></p>
+  	<div style="padding-top: 5%;">
+  		<h2 style="text-align: center;padding-bottom: 3%;color: #008b41">Select Student</h2>
+	  	<ion-row *ngFor="let child of children" style="background: #fcfcfc; margin-bottom: 3%;border-radius: 5%;" (click) = "goToDiary(child.regNo)" >
+	  		<ion-col width-20>
+	  			<preload-image *ngIf="child.url" style="border-radius: 50%;" [ratio]="{w:1, h:1}" [src]="child.url"></preload-image>
+	  			<ng-template *ngIf="!child.url">
+	  				<img *ngIf="child.gender =='M'" src="./assets/images/boy-avatar.png" style="border-radius: 50%;">
+	  				<img *ngIf="child.gender =='F'" src="./assets/images/girl-avatar.png" style="border-radius: 50%;">
+	  			</ng-template>
+	  		</ion-col>
+	  		<ion-col width-70>
+	  			<ul style="list-style: none;">
+		  			<li style="font-size: 1.2em;line-height: 1em;">{{child.name}}</li>
+		  			<li style="color:#a8a6a6;">{{child.class+"-"+child.division}}, {{child.roll}}</li>
+		  		</ul>	
+	  		</ion-col>
+	  		<ion-col width-10>
+	  			<ion-icon style="padding-top: 100%;" name="ios-arrow-forward"></ion-icon>
+	  		</ion-col>
+	  	</ion-row>
+	</div>
 </ion-content>

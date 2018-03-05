@@ -37,8 +37,9 @@ export class DiaryPage {
     this.diaryService
       .getData()
       .then(data => {
+      console.log(data)
         this.diary.posts = data.posts;
-        this.diary.homeworks = data.homeworks;
+        //this.diary.homeworks = data.homeworks;
         this.loading.dismiss();
       });
   }

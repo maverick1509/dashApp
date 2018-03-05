@@ -1,103 +1,235 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Profile</ion-title>
+    <ion-title style="text-align: center;">Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="profile-content">
   <div class="user-details">
     <ion-row class="user-main-data-row">
+      <ion-col no-padding width-33></ion-col>
       <ion-col no-padding width-33>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [src]="profile.user.image" alt="profile.user.name" title="profile.user.name"></preload-image>
+        <preload-image *ngIf="profile.user.url" class="user-image" [ratio]="{w:1, h:1}" [src]="profile.user.url" alt="profile.user.name" title="profile.user.name"></preload-image>
+        <ng-template *ngIf="!profile.user.url">
+            <img *ngIf="profile.user.gender =='M'" src="./assets/images/boy-avatar.png" style="border-radius: 50%;">
+            <img *ngIf="profile.user.gender =='F'" src="./assets/images/girl-avatar.png" style="border-radius: 50%;">
+          </ng-template>
       </ion-col>
-      <ion-col no-padding>
-        <ion-row class="social-presence-row">
-          <ion-col width-50 class="social-presence-item">
-              <h2 class="social-presence-value">{{profile.user.class}}</h2>
-              <h4 class="social-presence-title">Class</h4>
-          </ion-col>
-          <ion-col width-50 class="social-presence-item">
-              <h2 class="social-presence-value">{{profile.user.division}}</h2>
-              <h4 class="social-presence-title">Division</h4>
-          </ion-col>
-        </ion-row>
-        <ion-row class="social-presence-row" style="padding-top: 2%;">
-          <ion-col width-50 no-padding class="social-presence-item">
-            <h3 class="social-presence-value2"> {{profile.user.rollNo}} </h3>
-            <h4 class="social-presence-title">Roll No</h4>
-          </ion-col>
-          <ion-col width-50 no-padding class="social-presence-item">
-            <h3 class="social-presence-value2"> {{profile.user.stream}} </h3>
-            <h4 class="social-presence-title">Stream</h4>
-          </ion-col>
-        </ion-row>
-      </ion-col>
+      <ion-col no-padding width-33></ion-col>
     </ion-row>
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-50>
-        <h2 class="user-name">{{profile.user.name}}</h2>
-      </ion-col>
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.about}}
-        </p>
+    <ion-row no-padding class="user-bio-row">
+      <ion-col no-padding>
+        <h2 class="user-name" style="text-align: center;font-size: 1.4em;">{{profile.user.name}}</h2>
+        <h4 class="user-name" style="text-align: center;">{{profile.user.class + "-" +profile.user.division}}</h4>
+        <h6 class="user-name" style="text-align: center; font-size: 0.9em;">{{profile.user.roll}} | {{profile.user.section}}<span *ngIf="profile.user.section == 'HSS'"> | {{profile.user.stream}}</span> </h6>
       </ion-col>
     </ion-row>
   </div>
-  <h4 class="categories-title">Teachers</h4>
+  <!--<h4 class="categories-title">Teachers</h4>
   <ion-scroll scrollX="true" class="horizontal-categories">
     <ion-row class="categories-row">
       <ion-col width-30 class="horizontal-item"  *ngFor="let teacher of profile.teachers">
         <preload-image [ratio]="{w:1, h:1}" [src]="teacher.image" title="teacher.title"></preload-image>
       </ion-col>
     </ion-row>
-  </ion-scroll>
-  <div style="padding-top: 2%;"></div>
-  <div class="user-details" style="padding-top: 1%;">
-    <h4 class="categories-title">More student info</h4>
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-100>
-        <h2 class="user-name">Address</h2>
-      </ion-col>
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.address}}
-        </p>
-      </ion-col>
-    </ion-row>
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-100>
-        <h2 class="user-name">Date of birth</h2>
-      </ion-col>
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.dob}}
-        </p>
-      </ion-col>
-    </ion-row>
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-100>
-        <h2 class="user-name">E-mail</h2>
-      </ion-col>
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.email}}
-        </p>
-      </ion-col>
-    </ion-row>
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-100>
-        <h2 class="user-name">Phone number</h2>
-      </ion-col>
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.phone}}
-        </p>
-      </ion-col>
-    </ion-row>
-
-
+  </ion-scroll>-->
+  <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="personal" (ionSelect)="onSegmentSelected($event)">
+        Personal
+    </ion-segment-button>
+    <ion-segment-button value="parents" (ionSelect)="onSegmentSelected($event)">
+        Parents
+    </ion-segment-button>
+    <ion-segment-button value="contact" (ionSelect)="onSegmentSelected($event)">
+        Contact 
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'parents'" class="user-details3">
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Father's Name</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.fatherName}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Father's Phone</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.fatherPhone}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Father's Email</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.fatherEmail}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Father's Occupation</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.fatherOccupation}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Mother's Name</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.motherName}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="profile.user.motherPhone" wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Mother's Phone</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.motherPhone}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="profile.user.motherEmail" wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Mother's Email</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.motherEmail}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Mother's Occupation</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.motherOccupation}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'contact'" class="user-details3">
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Residential Address</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.contactAddress + ", " + profile.user.location}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">City and Pincode</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.city + " " + profile.user.pincode}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Contact Number</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.phone}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'personal'" class="user-details3">
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Height</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.height}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Weight</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.weight}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Gender</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            <span *ngIf="profile.user.gender == 'M'">Male</span><span *ngIf="profile.user.gender == 'F'">Female</span>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Date of Birth</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.dob}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Date of Joining</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.doj}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Blood Group</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.bloodGroup}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <h2 class="user-name">Religion & Caste</h2>
+        </ion-col>
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.caste + " " + profile.user.religion}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
   </div>
-
-
 </ion-content>

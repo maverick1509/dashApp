@@ -50,7 +50,6 @@ export class SettingsPage {
         this.settingsForm.setValue({
           name: data.user.name,
           location: data.user.location,
-          description: data.user.about,
           currency: 'dollar',
           weather: 'fahrenheit',
           notifications: true

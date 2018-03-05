@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, App, NavParams, LoadingController } from 'ionic-angular';
+import { MenuController, App, NavParams, LoadingController, SegmentButton } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/Rx';
@@ -18,6 +18,7 @@ export class ProfilePage {
   profile: ProfileModel = new ProfileModel();
   loading: any;
   student: any;
+  display: string;
 
   constructor(
     public menu: MenuController,
@@ -28,27 +29,29 @@ export class ProfilePage {
     public loadingCtrl: LoadingController
   ) {
     this.loading = this.loadingCtrl.create();
+    this.display = "personal";
   }
 
-  ionViewDidLoad() {
+  ionViewWillLoad(){
     this.loading.present();
     this.profileService
       .getData()
       .then(data => {
-        this.profile.user = data.user;
-        this.profile.following = data.following;
-        this.profile.followers = data.followers;
-        this.profile.posts = data.posts;
-        this.profile.teachers = data.teachers;
+        console.log(data.user);
+        this.profile.user = data.user[0];
         this.loading.dismiss();
       });
-  }
-
-  ionViewWillLoad(){
     this.storage.get('regNo').then((data) => {
      this.student = data;
      console.log(this.student);
     });
   }
+  onSegmentChanged(segmentButton: SegmentButton) {
+    // console.log('Segment changed to', segmentButton.value);
+  }
+  
 
+  onSegmentSelected(segmentButton: SegmentButton) {
+    // console.log('Segment selected', segmentButton.value);
+  }
 }
