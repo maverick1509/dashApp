@@ -21,7 +21,7 @@ export class DiaryPage {
   display: string;  
   diary: DiaryModel = new DiaryModel();
   loading: any;
-  data: {token: any, id: any };
+  data: {token: any, id: any, regNo: any };
 
   constructor(
     public nav: NavController,
@@ -49,15 +49,6 @@ export class DiaryPage {
       });
   }
 
-
-  onSegmentChanged(segmentButton: SegmentButton) {
-    // console.log('Segment changed to', segmentButton.value);
-  }
-  
-
-  onSegmentSelected(segmentButton: SegmentButton) {
-    // console.log('Segment selected', segmentButton.value);
-  }
 
   likePost(post){
     this.storage.get('user').then((val) => {
