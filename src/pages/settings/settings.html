@@ -29,10 +29,6 @@
         <ion-label stacked>Location</ion-label>
         <ion-input type="text" formControlName="location"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label stacked>Description</ion-label>
-        <ion-textarea formControlName="description" rows="5" placeholder="Your description here..."></ion-textarea>
-      </ion-item>
     </ion-list>
 
     <ion-row class="user-preferences-row">
@@ -85,7 +81,7 @@
 
   <button class="alt-button" ion-button full (click)="showTermsModal()">Terms of use</button>
 
-  <button class="alt-button logout-button" ion-button full icon-left (click)="logout()">
+  <button class="alt-button logout-button" ion-button full icon-left (click)="logoutAlert()">
     <ion-icon name="log-out"></ion-icon>
     Log out
   </button>

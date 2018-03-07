@@ -32,7 +32,7 @@
       <div class="list-item" *ngFor="let post of diary.posts">
         <span class="item-date">{{post.timestamp}}</span>
         <ion-card>
-          <preload-image *ngIf="post.isPhoto" [ratio]="{w:1, h:1}" [src]="post.photoURL" title=""></preload-image>
+          <img *ngIf="post.isPhoto" [src]="post.photoURL" title="">
           <ion-card-content>
             <p class="item-text">
               <strong>{{post.title}}</strong> is scheduled on <strong>{{post.eventDate}}</strong> from time <strong>{{post.timeFrom}}</strong> to <strong>{{post.timeTo}}</strong> at <strong>{{post.venue}}</strong> and is hosted by <strong>{{post.host}}</strong>
@@ -43,15 +43,9 @@
           </ion-card-content>
           <ion-row no-padding class="actions-row">
             <ion-col style="float: left;" no-padding width-30 text-left>
-              <button class="action-button" ion-button clear small color="danger" icon-left (click)='likePost(post.id)' >
+              <button class="action-button" ion-button clear small color="danger" icon-left (click)='likePost(post)' >
                 <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
-                  {{post.likes}} Likes
-              </button>
-            </ion-col>
-            <ion-col no-padding width-45 text-right>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon name='chatbubbles'></ion-icon>
-                  {{post.comments}} Comments
+                  {{post.likes}}
               </button>
             </ion-col>
           </ion-row>
