@@ -30,15 +30,10 @@ export class ExamListPage {
     this.examListService
       .getData()
       .then(data => {
+        console.log(data);
         this.list2.items = data.items;
         this.loading.dismiss();
       });
   }
 
-}
-
-export class ListModel {
-  name: string;
-  image: string;
-  description: string;
 }

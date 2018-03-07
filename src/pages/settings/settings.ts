@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, LoadingController, AlertController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Storage } from '@ionic/storage';
 
 import { TermsOfServicePage } from '../terms-of-service/terms-of-service';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
 
-import { WalkthroughPage } from '../walkthrough/walkthrough';
+import { LoginPage } from '../login/login';
 import 'rxjs/Rx';
-import { Storage } from '@ionic/storage';
 
 import { ProfileModel } from '../profile/profile.model';
 import { ProfileService } from '../profile/profile.service';
@@ -18,8 +18,8 @@ import { ProfileService } from '../profile/profile.service';
 })
 export class SettingsPage {
   settingsForm: FormGroup;
-  // make WalkthroughPage the root (or first) page
-  rootPage: any = WalkthroughPage;
+  // make LoginPage the root (or first) page
+  rootPage: any = LoginPage;
   loading: any;
   profile: ProfileModel = new ProfileModel();
 
@@ -47,6 +47,7 @@ export class SettingsPage {
     this.profileService
       .getData()
       .then(data => {
+        console.log(data)
         this.profile.user = data.user[0];
 
         this.settingsForm.setValue({
@@ -88,7 +89,7 @@ export class SettingsPage {
   logout(){
     this.storage.remove('user');
     this.storage.remove('regNo');
-    this.profile = null;
+    this.nav.setRoot(this.rootPage);
   }
 
   showTermsModal() {

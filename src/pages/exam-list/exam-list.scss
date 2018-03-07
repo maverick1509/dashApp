@@ -29,9 +29,43 @@ exam-list-page {
 
 							.item-description
 							{
-								overflow: hidden;
-								text-overflow: ellipsis;
-								white-space: nowrap;
+								margin-bottom: 4px;
+								@include display(flex);
+								@include align-items(center);
+								@include justify-content(space-between);
+
+								&:last-child
+								{
+									margin: 0px;
+								}
+
+								.description-icon
+								{
+									color: $white-d;
+									flex: 0 0 12%;
+							    max-width: 12%;
+									padding-right: 2px;
+									font-size: 2.1rem;
+									text-align: left;
+								}
+
+								.description-text
+								{
+									flex: 0 0 88%;
+							    max-width: 88%;
+									white-space: normal;
+									font-size: 1.2rem;
+									line-height: 1.4;
+									letter-spacing: 0.2px;
+									color: $white-d;
+
+									&.one-line
+									{
+										overflow: hidden;
+									  text-overflow: ellipsis;
+									  white-space: nowrap;
+									}
+								}
 							}
 						}
 					}

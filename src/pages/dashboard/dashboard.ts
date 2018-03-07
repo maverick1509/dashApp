@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 
-import { FeedPage } from '../feed/feed';
+import { ExamListPage } from '../exam-list/exam-list';
 import 'rxjs/Rx';
 
 import { DashboardModel } from './dashboard.model';
@@ -37,12 +37,8 @@ export class DashboardPage {
       });
   }
 
-
-  goToFeed(category: any) {
-    this.nav.push(FeedPage, {
-      category: category
-    });
+  goToExamList(){
+    this.nav.push(ExamListPage);
   }
-
 }
 

@@ -13,7 +13,11 @@
   <div class="user-image-content">
     <ion-row no-padding class="user-image-row">
       <ion-col no-padding width-40>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [src]="profile.user.image" alt="aca va la img" title="IMAGE!"></preload-image>
+        <preload-image *ngIf="profile.user.url" class="user-image" [ratio]="{w:1, h:1}" [src]="profile.user.url" alt="profile.user.name" title="profile.user.name"></preload-image>
+        <ng-template *ngIf="!profile.user.url">
+            <img *ngIf="profile.user.gender =='M'" src="./assets/images/boy-avatar.png" style="border-radius: 50%;">
+            <img *ngIf="profile.user.gender =='F'" src="./assets/images/girl-avatar.png" style="border-radius: 50%;">
+          </ng-template>
       </ion-col>
     </ion-row>
     <h3 class="image-action">Change profile picture</h3>
@@ -29,6 +33,10 @@
         <ion-label stacked>Location</ion-label>
         <ion-input type="text" formControlName="location"></ion-input>
       </ion-item>
+  <!--    <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-textarea formControlName="description" rows="5" placeholder="Your description here..."></ion-textarea>
+      </ion-item> -->
     </ion-list>
 
     <ion-row class="user-preferences-row">

@@ -11,6 +11,7 @@ import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
+import { ExamListPage } from '../pages/exam-list/exam-list';
 import { LoginStudentPage } from '../pages/login-student/login-student';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
@@ -51,6 +52,7 @@ import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 import { FeedService } from '../pages/feed/feed.service';
 import { DiaryService } from '../pages/diary/diary.service';
+import { ExamListService } from '../pages/exam-list/exam-list.service';
 import { DashboardService } from '../pages/dashboard/dashboard.service';
 import { ProfileService } from '../pages/profile/profile.service';
 import { TimelineService } from '../pages/timeline/timeline.service';
@@ -66,6 +68,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     MyApp,
     DiaryPage,
     DashboardPage,
+    ExamListPage,
     EventModalPage,
     FeedPage,
     FollowersPage,
@@ -121,6 +124,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     EventModalPage,
     FollowersPage,
     LandingPage,
+    ExamListPage,
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
@@ -148,7 +152,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LeavePage,
     PaymentPage
   ],
-  providers: [FeedService, TodayTimeTableService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, DayTimeTableService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService,ExamListService, TodayTimeTableService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, DayTimeTableService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
