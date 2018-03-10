@@ -25,7 +25,7 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { List1Page } from '../pages/list-1/list-1';
 import { List2Page } from '../pages/list-2/list-2';
 import { GridPage } from '../pages/grid/grid';
-import { ResultsPage } from '../pages/results/results';
+import { CourseDetailsPage } from '../pages/course-details/course-details';
 import { FormLayoutPage } from '../pages/form-layout/form-layout';
 import { FiltersPage } from '../pages/filters/filters';
 import { TimeTablelistPage } from '../pages/timetablelist/timetablelist';
@@ -73,7 +73,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     EventModalPage,
     FeedPage,
     FollowersPage,
-    ResultsPage,
+    CourseDetailsPage,
     LayoutsPage,
     LandingPage,
     FormsPage,
@@ -124,7 +124,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     DashboardPage,
     FeedPage,
     EventModalPage,
-    ResultsPage,
+    CourseDetailsPage,
     FollowersPage,
     LandingPage,
     CoursePage,

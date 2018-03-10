@@ -6,12 +6,12 @@ import 'rxjs/Rx';
 import { CourseModel } from './courses.model';
 import { CourseService } from './courses.service';
 
-import { ResultsPage } from '../results/results';
+import { CourseDetailsPage } from '../course-details/course-details';
 
 
 
 @Component({
-  selector: 'course-page',
+  selector: 'courses-page',
   templateUrl: 'courses.html'
 })
 export class CoursePage {
@@ -38,9 +38,9 @@ export class CoursePage {
       });
   }
 
-  goToResults(){
+  goToCourseDetails(item){
     console.log("HI")
-    this.nav.push(ResultsPage);
+    this.nav.push(CourseDetailsPage,item);
   }
 
 }

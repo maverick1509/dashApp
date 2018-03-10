@@ -6,8 +6,8 @@
 
 <ion-content class="forms-examples-content">
   <ion-row>
-    <ion-col padding width-50 class="item" *ngFor="let item of list2.items">
-      <div style="background-color: white;line-height: 0.5;padding-bottom: 2%;">
+    <ion-col padding width-50 class="item" *ngFor="let item of list2.items" (click)="goToCourseDetails(item)" style="border-radius: 2px;">
+      <div style="background-color: white;line-height: 0.5;padding-bottom: 2%;box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);">
         <preload-image [ratio]="{w:1, h:1}"></preload-image>
             <p style="text-align: center;font-size: 1.4em;padding: 0;">{{item.courseName}}</p>
             <p style="text-align: center;">{{item.courseId}}</p>

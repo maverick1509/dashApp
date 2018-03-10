@@ -3,10 +3,10 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 import { Http } from '@angular/http';
 
 @Component({
-  selector: 'results-page',
-  templateUrl: 'results.html'
+  selector: 'course-details-page',
+  templateUrl: 'course-details.html'
 })
-export class ResultsPage {
+export class CourseDetailsPage {
   loading: any;
   co_data = { title: null, token: null, leaveFrom: null, leaveTo: null, regNo: null };
 
