@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Courses</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="forms-examples-content">
+  <ion-row>
+    <ion-col padding width-50 class="item" *ngFor="let item of list2.items">
+      <div style="background-color: white;line-height: 0.5;padding-bottom: 2%;">
+        <preload-image [ratio]="{w:1, h:1}"></preload-image>
+            <p style="text-align: center;font-size: 1.4em;padding: 0;">{{item.courseName}}</p>
+            <p style="text-align: center;">{{item.courseId}}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

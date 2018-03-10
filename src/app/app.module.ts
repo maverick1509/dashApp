@@ -11,7 +11,7 @@ import { FollowersPage } from '../pages/followers/followers';
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
-import { ExamListPage } from '../pages/exam-list/exam-list';
+import { CoursePage } from '../pages/courses/courses';
 import { LoginStudentPage } from '../pages/login-student/login-student';
 import { TimelinePage } from '../pages/timeline/timeline';
 import { MessagesPage } from '../pages/messages/messages';
@@ -25,6 +25,7 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { List1Page } from '../pages/list-1/list-1';
 import { List2Page } from '../pages/list-2/list-2';
 import { GridPage } from '../pages/grid/grid';
+import { ResultsPage } from '../pages/results/results';
 import { FormLayoutPage } from '../pages/form-layout/form-layout';
 import { FiltersPage } from '../pages/filters/filters';
 import { TimeTablelistPage } from '../pages/timetablelist/timetablelist';
@@ -52,7 +53,7 @@ import {ChatBubble} from '../components/chatBubble/chatBubble';
 
 import { FeedService } from '../pages/feed/feed.service';
 import { DiaryService } from '../pages/diary/diary.service';
-import { ExamListService } from '../pages/exam-list/exam-list.service';
+import { CourseService } from '../pages/courses/courses.service';
 import { DashboardService } from '../pages/dashboard/dashboard.service';
 import { ProfileService } from '../pages/profile/profile.service';
 import { TimelineService } from '../pages/timeline/timeline.service';
@@ -68,10 +69,11 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     MyApp,
     DiaryPage,
     DashboardPage,
-    ExamListPage,
+    CoursePage,
     EventModalPage,
     FeedPage,
     FollowersPage,
+    ResultsPage,
     LayoutsPage,
     LandingPage,
     FormsPage,
@@ -122,9 +124,10 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     DashboardPage,
     FeedPage,
     EventModalPage,
+    ResultsPage,
     FollowersPage,
     LandingPage,
-    ExamListPage,
+    CoursePage,
     LayoutsPage,
     FormsPage,
     TimeTablelistPage,
@@ -152,7 +155,7 @@ import { DayTimeTableService } from '../pages/daytimetable/daytimetable.service'
     LeavePage,
     PaymentPage
   ],
-  providers: [FeedService,ExamListService, TodayTimeTableService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, DayTimeTableService, List1Service, List2Service, ScheduleService],
+  providers: [FeedService,CourseService, TodayTimeTableService, DiaryService, DashboardService, ProfileService, TimelineService, MessagesService, DayTimeTableService, List1Service, List2Service, ScheduleService],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

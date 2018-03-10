@@ -3,15 +3,15 @@ import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/toPromise';
-import { ExamListModel } from './exam-list.model';
+import { CourseModel } from './courses.model';
 
 @Injectable()
-export class ExamListService {
+export class CourseService {
   constructor(public http: Http, public storage: Storage) {}
 
     data: any = {token: null, regNo: null};
 
-    public getData(): Promise<ExamListModel> {
+    public getData(): Promise<CourseModel> {
     return Promise.all([this.storage.get('regNo'), this.storage.get('user')]).then(([val1, val2]) => {
       this.data.token = val2.token;
       this.data.regNo = val1;
@@ -19,7 +19,7 @@ export class ExamListService {
       return this.http.post('http://www.schooldash.xyz/services/fetchexamslist.php', this.data)
         .toPromise();
     })
-      .then(response => response.json() as ExamListModel)
+      .then(response => response.json() as CourseModel)
       .catch(this.handleError);
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import { Http } from '@angular/http';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 

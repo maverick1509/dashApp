@@ -3,23 +3,25 @@ import { NavController, LoadingController } from 'ionic-angular';
 
 import 'rxjs/Rx';
 
-import { ExamListModel } from './exam-list.model';
-import { ExamListService } from './exam-list.service';
+import { CourseModel } from './courses.model';
+import { CourseService } from './courses.service';
+
+import { ResultsPage } from '../results/results';
 
 
 
 @Component({
-  selector: 'exam-list-page',
-  templateUrl: 'exam-list.html'
+  selector: 'course-page',
+  templateUrl: 'courses.html'
 })
-export class ExamListPage {
-  list2: ExamListModel = new ExamListModel();
+export class CoursePage {
+  list2: CourseModel = new CourseModel();
   loading: any;
 
 
   constructor(
     public nav: NavController,
-    public examListService: ExamListService,
+    public courseService: CourseService,
     public loadingCtrl: LoadingController
   ) {
     this.loading = this.loadingCtrl.create();
@@ -27,13 +29,18 @@ export class ExamListPage {
 
   ionViewDidLoad() {
     this.loading.present();
-    this.examListService
+    this.courseService
       .getData()
       .then(data => {
         console.log(data);
         this.list2.items = data.items;
         this.loading.dismiss();
       });
+  }
+
+  goToResults(){
+    console.log("HI")
+    this.nav.push(ResultsPage);
   }
 
 }

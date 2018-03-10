@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-import { Http, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import { Http } from '@angular/http';
 import { NavController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 

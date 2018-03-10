@@ -1,0 +1,22 @@
+results-page {
+	ion-header {
+		@include header-styles(color($colors, header-alt, base), color($colors, header-alt, contrast));
+	}
+
+	.forms-examples-content
+	{
+		background-color: color($colors, background, base);
+
+		.circle{
+			  border-radius: 50%;
+			  margin-top:4%;
+			  margin-bottom:2%; 
+			  padding: 13% 12% 13% 12% ;
+			  border: 6px solid #d8d8d8;
+			  color: #d8d8d8;
+			  text-align: center;
+			  font: 1.1em Arial, sans-serif;
+		}
+
+	}
+}

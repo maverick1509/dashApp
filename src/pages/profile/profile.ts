@@ -7,8 +7,6 @@ import 'rxjs/Rx';
 import { ProfileModel } from './profile.model';
 import { ProfileService } from './profile.service';
 
-import { LeavePage } from '../leave/leave';
-import { TimeTablelistPage } from '../timetablelist/timetablelist';
 
 @Component({
   selector: 'profile-page',

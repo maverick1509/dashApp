@@ -5,6 +5,6 @@ export class ListModel {
   name: string;
   examDate: string;
 }
-export class ExamListModel {
+export class CourseModel {
   items: Array<ListModel>;
 }
